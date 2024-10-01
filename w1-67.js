@@ -1,7 +1,4 @@
-let a = 13;
-let b= 5;
-alert(a%b);
-alert(2**10);
-let str = 'Polina';
-let str1 = 'Kustareva';
-alert(str+' '+str1);
+let str1 = 'xxx';
+let str2 = 'yyy';
+let txt  = aaa  `${str1}  bbb ${str2} ccc`;
+alert(txt);
