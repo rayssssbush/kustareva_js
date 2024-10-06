@@ -1,2 +1,10 @@
-let r=prompt('радиус: ')
-document.write(2 * Math.PI * r)
+let r=6;
+let a=4;
+let b=7;
+let tc = 25;
+let tf = (tc * 9/5) + 32; 
+document.write('S круга='+String(2 * Math.PI * r)+'<br>');
+document.write('S квадрата='+String(a**2)+'<br>');
+document.write('S прямоугольника='+String(a * b)+'<br>');
+document.write('P прямоугольника='+String(2*(a * b))+'<br>');
+document.write('температура в F:'+String(tf));
