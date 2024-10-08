@@ -1,5 +1,5 @@
-let obj = {'x': 1, 'y': 2, 'z': 3};
-obj['x']**=2;
-obj['y']**=2;
-obj['z']**=2;
+let obj = {};
+for (let i=1; i<5; i++){
+    obj[i]=i*i;
+}
 console.log(obj)
