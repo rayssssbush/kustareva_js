@@ -1,5 +1,4 @@
-let obj = {};
-for (let i=1; i<5; i++){
-    obj[i]=i*i;
-}
-console.log(obj)
+let obj = {x: 1, y: 2, z: 3};
+let obj_k= Object.keys(obj);
+
+console.log(obj_k)
