@@ -24,4 +24,3 @@ for (let i = 1; i<6;i++){
 console.log(arr2)
 console.log(arr[key1]+arr[key2])
 console.log(delete arr3[2])
-console.log(arr[arr.length]);
