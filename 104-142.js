@@ -1,8 +1,8 @@
-let test1 = '123';
-let test2 = 123;
-if (test1 == test2) {
+let num1 = 1;
+let num2 = 3;
+
+if (num1 <=1 && num2 >=3) {
 	console.log(true);
-}
-else{
-    console.log(false);
+} else {
+	console.log(false);
 }
