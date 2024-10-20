@@ -1,11 +1,11 @@
-let num = 12;
+let num1 = 25;
+let str_num = String(num1);
+let b = 0;
 
-if ((1<=num<=10)) {
-	console.log('first');
-} else if (10<=num<=20) {
-	console.log('second');
-} else if (20<=num<=31) {
-	console.log('third');
-} else {
-	console.log('неверное значение переменной num');
+if (10 <= num1 && num1 <= 99) {
+  for (let i = 0; i < str_num.length; i++) {
+    b += parseInt(str_num[i]);
+  }
 }
+
+console.log(b);
