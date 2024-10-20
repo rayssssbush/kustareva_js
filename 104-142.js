@@ -1,8 +1,5 @@
-let num1 = 1;
-let num2 = 3;
+let test = 10;
 
-if (num1 <=1 && num2 >=3) {
-	console.log(true);
-} else {
-	console.log(false);
-}
+if (test == 10) {
+	console.log('yes');
+}else{}
