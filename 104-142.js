@@ -1,8 +1,13 @@
-let num = 12340;
-let lastDigit = String(num)[String(num).length - 1];
+let month = 4;
 
-if (lastDigit === '0') {
-    console.log('Последняя цифра — 0');
+if (month >= 1 && month <= 2 || month === 12) {
+    console.log('Зима');
+} else if (month >= 3 && month <= 5) {
+    console.log('Весна');
+} else if (month >= 6 && month <= 8) {
+    console.log('Лето');
+} else if (month >= 9 && month <= 11) {
+    console.log('Осень');
 } else {
-    console.log('Последняя цифра не равна 0');
+    console.log('Неверный номер месяца');
 }
