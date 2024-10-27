@@ -1,13 +1,5 @@
-let min = 10;
+let str = '123';
 
-if (min >= 0 && min <= 19) {
-	console.log('1 треть');
-}
-
-if (min >= 20 && min <= 39) {
-	console.log('2 треть');
-}
-
-if (min >= 40 && min <= 59) {
-	console.log('3 треть');
+if (str.length == 3) {
+	console.log(Number(str[0])+Number(str[1])+Number(str[2]));
 }
