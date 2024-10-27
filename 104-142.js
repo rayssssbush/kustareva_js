@@ -1,5 +1,5 @@
-let str = '123';
+let str = 'bcdef';
 
-if (str.length == 3) {
-	console.log(Number(str[0])+Number(str[1])+Number(str[2]));
+if (str[0] === 'a' || str[0] === 'b') {
+    console.log('Строка начинается с "a" или "b"');
 }
