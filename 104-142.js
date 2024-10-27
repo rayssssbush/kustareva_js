@@ -1,7 +1,10 @@
-const answer = prompt("Вам уже есть 18 лет? (да/нет):");
-    
-if (answer.toLowerCase() === "да") {
-	alert("Текст для взрослых.");
+let age = 17;
+let adult;
+
+if (age >= 18) {
+	let adult = true;
+	console.log(adult);
 } else {
-	alert("Доступ запрещен.");
+	let adult = false;
+	console.log(adult);
 }
