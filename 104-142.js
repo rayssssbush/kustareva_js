@@ -1,10 +1,13 @@
-let age = 17;
-let adult;
+let min = 10;
 
-if (age >= 18) {
-	let adult = true;
-	console.log(adult);
-} else {
-	let adult = false;
-	console.log(adult);
+if (min >= 0 && min <= 19) {
+	console.log('1 треть');
+}
+
+if (min >= 20 && min <= 39) {
+	console.log('2 треть');
+}
+
+if (min >= 40 && min <= 59) {
+	console.log('3 треть');
 }
