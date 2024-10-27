@@ -1,5 +1,8 @@
-let str = 'bcdef';
+let num = 12340;
+let lastDigit = String(num)[String(num).length - 1];
 
-if (str[0] === 'a' || str[0] === 'b') {
-    console.log('Строка начинается с "a" или "b"');
+if (lastDigit === '0') {
+    console.log('Последняя цифра — 0');
+} else {
+    console.log('Последняя цифра не равна 0');
 }
