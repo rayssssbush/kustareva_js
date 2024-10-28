@@ -1,3 +1,5 @@
-for (let i = 100; i >= 0; i--) {
-    console.log(i);
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
 }
