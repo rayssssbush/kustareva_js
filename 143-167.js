@@ -1,9 +1,7 @@
-let arr = [1, 2, 3, 5, 8, 10];
-let found = false;
+let arr = [1, 2, 3, 4, 5];
+let sum = 0;
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === 5) {
-        found = true;
-        break;
-    }
+    sum += arr[i];
 }
-console.log(found ? "Есть элемент 5" : "Элемента 5 нет");
+let average = sum / arr.length;
+console.log(average);
