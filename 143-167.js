@@ -1,10 +1,7 @@
-let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
-let evenObj = {};
+let obj = {x: 1, y: 2, z: 3};
 
 for (let key in obj) {
-    if (obj[key] % 2 === 0) {
-        evenObj[key] = obj[key];
-    }
+    obj[key] += 1;
 }
 
-console.log(evenObj);
+console.log(obj);
