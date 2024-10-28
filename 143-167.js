@@ -1,5 +1,5 @@
-let obj = { x: 1, y: 2, z: 3 };
-
-for (let key in obj) {
-    console.log(obj[key]);
+let i = 1;
+while (i <= 100) {
+    console.log(i);
+    i++;
 }
