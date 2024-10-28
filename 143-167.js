@@ -1,7 +1,13 @@
-let obj = {x: 1, y: 2, z: 3};
+function isPrime(num) {
+    if (num <= 1) return false;
 
-for (let key in obj) {
-    obj[key] += 1;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
-console.log(obj);
+let number = 17;
+console.log(isPrime(number) ? 'Число простое' : 'Число не является простым');
