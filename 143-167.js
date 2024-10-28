@@ -1,10 +1,5 @@
-let arr = [2, 5, 9, 3, 1, 4];
-let sum = 0;
-
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-        sum += arr[i];
+for (let i = 10; i <= 1000; i++) {
+    if (String(i)[0] == '1') {
+        console.log(i);
     }
 }
-
-console.log(sum);
