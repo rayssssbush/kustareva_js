@@ -1,12 +1,11 @@
-let arr = [10, 20, 30, 40, 21, 32, 51];
+let obj = {a: 10, b: 20, c: 30, d: 40, e: 50};
 let sum = 0;
 
-for (let i = 0; i < arr.length; i++) {
-    let firstDigit = String(arr[i])[0];
-
+for (let key in obj) {
+    let firstDigit = String(obj[key])[0];
     if (firstDigit === '1' || firstDigit === '2') {
-        sum += arr[i];
+        sum += obj[key];
     }
 }
-
 console.log(sum);
+
