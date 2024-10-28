@@ -1,10 +1,3 @@
-let num = 1;
-let count = 0; 
-
-while (num <= 1000) {
-    num *= 3;
-    count++;
+for (let i = 100; i >= 0; i--) {
+    console.log(i);
 }
-
-console.log('Результат:', num);
-console.log('Количество итераций:', count);
