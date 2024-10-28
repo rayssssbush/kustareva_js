@@ -1,11 +1,11 @@
-let obj = { 'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5 };
-let keys = [];
-let values = [];
+let obj = {1: 125, 2: 225,3: 128, 4: 356,5: 145,6: 281,7: 452};
+let result = [];
 
 for (let key in obj) {
-    keys.push(key);
-    values.push(obj[key]);
+    let value = obj[key].toString();
+    if (value[0] === '1' || value[0] === '2') {
+        result.push(obj[key]);
+    }
 }
 
-console.log(keys);
-console.log(values);
+console.log(result);
