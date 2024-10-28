@@ -1,9 +1,9 @@
 let result = '';
 
-for (let i = 1; i <= 9; i++) {
+for (let i = 1; i <= 3; i++) {
     for (let j = 1; j <= 3; j++) {
-        result += i;
+        result += i + '' + j + ' ';
     }
 }
 
-console.log(result);
+console.log(result.trim());
