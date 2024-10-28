@@ -1,11 +1,9 @@
-let arr = [2, 5, 9, -3, 1, 4];
-let sum = 0;
+let result = '';
 
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < 0) {
-        break;
+for (let i = 1; i <= 9; i++) {
+    for (let j = 1; j <= 3; j++) {
+        result += i;
     }
-    sum += arr[i];
 }
 
-console.log(sum);
+console.log(result);
