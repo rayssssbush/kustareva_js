@@ -1,8 +1,8 @@
-for (let i = 10; i <= 1000; i++) {
-    let str = String(i);
-    let sumOfFirstTwoDigits = Number(str[0]) + Number(str[1]);
-    
-    if (sumOfFirstTwoDigits === 5) {
-        console.log(i);
+let arr = [2, 5, 0, 3, 1, 4];
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+        break;
     }
+    console.log(arr[i]);
 }
