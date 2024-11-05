@@ -1,15 +1,10 @@
-let arr = [
-    ['a', 'b', 'c'],
-    ['d', 'e', 'f'],
-    ['g', 'h', 'i'],
-    ['j', 'k', 'l'],
-];
+let arr = [[1, 2], [3, 4], [5, 6]];
+let n = 0;
 
-let elementsToShow = [
-    arr[3][2], 
-    arr[1][1], 
-    arr[2][0], 
-    arr[0][0]  
-];
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+        n += arr[i][j];
+    }
+}
 
-console.log(elementsToShow);
+console.log(n);
