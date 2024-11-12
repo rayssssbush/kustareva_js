@@ -1,4 +1,13 @@
-let a = 5;
-let b = 10;
-let difference = Math.abs(a - b);
-console.log("Модуль разности:", difference);
+let str = 'я учу javascript!';
+let word1_substr = str.substr(2, 3);
+let word2_substr = str.substr(6, 10);
+let word1_substring = str.substring(2, 5);
+let word2_substring = str.substring(6, 16);
+let word1_slice = str.slice(2, 5);
+let word2_slice = str.slice(6, 16);
+console.log("Слово 'учу' через substr:", word1_substr);
+console.log("Слово 'учу' через substring:", word1_substring);
+console.log("Слово 'учу' через slice:", word1_slice);
+console.log("Слово 'javascript' через substr:", word2_substr);
+console.log("Слово 'javascript' через substring:", word2_substring);
+console.log("Слово 'javascript' через slice:", word2_slice);
