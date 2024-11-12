@@ -1,6 +1,3 @@
-let str = 'http://example.com';
-if (str.startsWith('http://')) {
-    console.log("Строка начинается с 'http://'");
-} else {
-    console.log("Строка не начинается с 'http://'");
-}
+let arr = [1, 2, 3, 4, 5];
+let result = arr.join('-');
+console.log(result);
