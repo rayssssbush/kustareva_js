@@ -1,7 +1,7 @@
-let sqrtResult = Math.sqrt(587);
-let roundedResults = {
-    floor: Math.floor(sqrtResult),
-    ceil: Math.ceil(sqrtResult)
-};
+let numbers = [4, -2, 5, 19, -130, 0, 10];
 
-console.log(roundedResults);
+let min = Math.min(...numbers);
+let max = Math.max(...numbers);
+
+console.log("Минимальное число:", min);
+console.log("Максимальное число:", max);
