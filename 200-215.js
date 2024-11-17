@@ -1,10 +1,5 @@
-function checkSign(number) {
-    if (number >= 0) {
-        console.log('+++');
-    } else {
-        console.log('---');
-    }
+function printSum(a, b, c) {
+    console.log(a + b + c);
 }
-checkSign(5);
-checkSign(-10);
-checkSign(0);
+printSum(2, 3, 4);
+printSum(10, -5, 0);
