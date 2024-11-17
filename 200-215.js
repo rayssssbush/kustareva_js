@@ -1,8 +1,4 @@
-func();
-
-function func() {
-    n=0
-    for (i=0; i<100; i++)
-        n+=i
-	console.log(n);
+function printCube(number) {
+    console.log(number ** 3); 
 }
+printCube(3); 
