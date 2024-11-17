@@ -1,5 +1,7 @@
-function printSum(a, b, c) {
+function func(a, b, c) {
     console.log(a + b + c);
 }
-printSum(2, 3, 4);
-printSum(10, -5, 0);
+let param1 = 1;
+let param2 = 2;
+let param3 = 3;
+func(param1, param2, param3);
