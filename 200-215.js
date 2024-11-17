@@ -1,7 +1,7 @@
-function func(a, b, c) {
-    console.log(a + b + c);
+function sqrt(num) {
+    return Math.sqrt(num);
 }
-let param1 = 1;
-let param2 = 2;
-let param3 = 3;
-func(param1, param2, param3);
+let root3 = sqrt(3);
+let root4 = sqrt(4);
+let sum = root3 + root4;
+console.log(sum);
