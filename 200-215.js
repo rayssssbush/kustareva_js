@@ -1,4 +1,10 @@
-function printCube(number) {
-    console.log(number ** 3); 
+function checkSign(number) {
+    if (number >= 0) {
+        console.log('+++');
+    } else {
+        console.log('---');
+    }
 }
-printCube(3); 
+checkSign(5);
+checkSign(-10);
+checkSign(0);
