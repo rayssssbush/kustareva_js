@@ -1,14 +1,11 @@
-let startDate = new Date(2000, 8, 1);
-let endDate = new Date(2010, 1, 15);
-
-let timeDifference = endDate - startDate;
-
-console.log(timeDifference);
-let daysDifference = timeDifference / (1000 * 3600 * 24);
-console.log(daysDifference);
-
-let monthsDifference = (endDate.getFullYear() - startDate.getFullYear()) * 12 + endDate.getMonth() - startDate.getMonth();
-console.log(monthsDifference);
-
-let yearsDifference = endDate.getFullYear() - startDate.getFullYear();
-console.log(yearsDifference);
+function getLastDayOfMonth(month, year) {
+    let date = new Date(year, month, 0);
+    return date.getDate();
+  }
+  
+  console.log(getLastDayOfMonth(5, 2025));
+  
+  let lastDayOfMay2025 = new Date(2025, 4, getLastDayOfMonth(5, 2025));
+  let dayOfWeek = lastDayOfMay2025.getDay();
+  console.log(dayOfWeek);
+  
