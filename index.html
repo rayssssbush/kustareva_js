@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анонимная функция-обработчик</title>
+    <title>Обработчики событий</title>
 </head>
 <body>
 
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
+    <a href="https://example.com" id="link">Click me</a>
+    <button id="button1">Добавить href</button>
+
+    <button id="button2">1</button>
 
     <script>
-        let divs = document.querySelectorAll('div');
+        // Задача 1
+        let link = document.getElementById('link');
+        let button1 = document.getElementById('button1');
+        let isClicked = false;
 
-        for (let div of divs) {
-            div.addEventListener('click', function() {
-                this.textContent++;
-            });
-        }
+        button1.addEventListener('click', function() {
+            if (!isClicked) {
+                link.textContent += ` (${link.getAttribute('href')})`;
+                isClicked = true;
+            }
+        });
+
+        // Задача 2
+        let button2 = document.getElementById('button2');
+
+        button2.addEventListener('click', function() {
+            this.innerText = parseInt(this.innerText) + 1;
+            if (parseInt(this.innerText) === 10) {
+                button2.removeEventListener('click', arguments.callee);
+            }
+        });
     </script>
 
 </body>
