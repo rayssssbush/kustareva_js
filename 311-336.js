@@ -1,9 +1,11 @@
-const currentDate = new Date();
-
-const day = currentDate.getDate();
-const month = currentDate.getMonth() + 1;
-const year = currentDate.getFullYear();
-
-console.log('Текущий день:', day);
-console.log('Текущий месяц:', month);
-console.log('Текущий год:', year);
+function formatDate(date) {
+    let parts = date.split('-');
+    let year = parts[0];
+    let month = parts[1];
+    let day = parts[2];
+    
+    return `${day}.${month}.${year}`;
+}
+let inputDate = "2024-12-31";
+let formattedDate = formatDate(inputDate);
+console.log(formattedDate);
