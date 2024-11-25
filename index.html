@@ -7,27 +7,20 @@
 </head>
 <body>
 
-    <div id="elem" class="content no-gap"></div>
-    <button id="button1">Прочитать атрибут class</button>
-
-    <div id="elem2"></div>
-    <button id="button2">Записать класс</button>
-
-    <div id="elem3" class="aaa bbb ccc"></div>
-    <button id="button3">Получить массив классов</button>
+    <input id="input1" type="text">
+    <button id="button1">1</button>
 
     <script>
+        document.getElementById('input1').addEventListener('focus', function() {
+            this.value = 1;
+        });
+
+        document.getElementById('input1').addEventListener('blur', function() {
+            this.value = 2;
+        });
+
         document.getElementById('button1').addEventListener('click', function() {
-            console.log(document.getElementById('elem').getAttribute('class'));
-        });
-
-        document.getElementById('button2').addEventListener('click', function() {
-            document.getElementById('elem2').setAttribute('class', 'new-class');
-        });
-
-        document.getElementById('button3').addEventListener('click', function() {
-            let classes = document.getElementById('elem3').className.split(' ');
-            console.log(classes);
+            this.innerText = parseInt(this.innerText) + 1;
         });
     </script>
 
