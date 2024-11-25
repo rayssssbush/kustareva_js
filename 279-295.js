@@ -1,5 +1,5 @@
-const arr = [2, 3, 5, 7, 8];
+const arr = [1, 2, 3, 4, 5];
 
-const allValid = arr.every((item, index) => item * (index + 1) < 30);
+const allPositive = arr.every(item => item > 0);
 
-console.log(allValid);
+console.log(allPositive);
