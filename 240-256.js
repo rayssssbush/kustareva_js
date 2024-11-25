@@ -1,13 +1,10 @@
-function func1() {
+const func1 = function() {
     return 1;
-}
-
-function func2() {
+};
+const func2 = function() {
     return 2;
-}
-
-function func3() {
+};
+const func3 = function() {
     return 3;
-}
-
+};
 console.log(test(func1, func2, func3));
