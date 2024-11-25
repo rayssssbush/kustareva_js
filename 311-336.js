@@ -1,4 +1,7 @@
+let months = [
+	'янв', 'фев', 'мар', 'апр', 'май', 'июн',
+	'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'
+];
 let today = new Date();
-let dayOfWeek = today.getDay();
-let daysUntilSunday = (7 - dayOfWeek) % 7; 
-console.log(`До следующего воскресенья осталось ${daysUntilSunday} дней.`);
+let currentMonth = today.getMonth();
+console.log(months[currentMonth]);
