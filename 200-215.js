@@ -1,5 +1,9 @@
-function func(num1, num2) {
-    return (num1 > 0 && num2 > 0) ? num1 * num2 : num1 - num2;
+function areAllDigitsOdd(number) {
+    return number
+        .toString()
+        .split('')
+        .every(digit => parseInt(digit) % 2 !== 0);
 }
 
-console.log(func(3, 4));
+console.log(areAllDigitsOdd(13579));
+console.log(areAllDigitsOdd(13578));
