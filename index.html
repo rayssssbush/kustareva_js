@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обработчики событий</title>
+    <title>Списки</title>
 </head>
 <body>
 
-    <a href="https://example.com" id="link">Click me</a>
-    <button id="button1">Добавить href</button>
-
-    <button id="button2">1</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
 
     <script>
         // Задача 1
-        let link = document.getElementById('link');
-        let button1 = document.getElementById('button1');
-        let isClicked = false;
-
-        button1.addEventListener('click', function() {
-            if (!isClicked) {
-                link.textContent += ` (${link.getAttribute('href')})`;
-                isClicked = true;
-            }
+        let listItems = document.querySelectorAll('ul li');
+        
+        listItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                this.textContent = Number(this.textContent) + 1;
+            });
         });
 
         // Задача 2
-        let button2 = document.getElementById('button2');
+        listItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                if (!this.dataset.clicked) {
+                    this.textContent = Number(this.textContent) + 1;
+                    this.dataset.clicked = true;
+                }
+            });
+        });
 
-        button2.addEventListener('click', function() {
-            this.innerText = parseInt(this.innerText) + 1;
-            if (parseInt(this.innerText) === 10) {
-                button2.removeEventListener('click', arguments.callee);
-            }
+        // Задача 3
+        listItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                if (Number(this.textContent) < 10) {
+                    this.textContent = Number(this.textContent) + 1;
+                }
+            });
         });
     </script>
 
