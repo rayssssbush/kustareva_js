@@ -1,9 +1,3 @@
 function test(func1, func2, func3) {
-    const sum = func1() + func2() + func3();
-    console.log(sum);
+    return func1() + func2() + func3();
 }
-test(
-    () => 1,
-    () => 2, 
-    () => 3 
-);
