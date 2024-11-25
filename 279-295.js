@@ -1,3 +1,7 @@
-const arr = [2, 3, 5, 7, 8];
-const allValid = arr.every((item, index) => item * (index + 1) < 30);
-console.log(allValid);
+function average(...numbers) {
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    return sum / numbers.length;
+  }
+
+  console.log(average(1, 2, 3, 4, 5));
+  
