@@ -1,5 +1,5 @@
 let strings = ["hello", "world", "javascript"];
 each(strings, function(str) {
-    return str.split('').reverse().join('');
+    return str.charAt(0).toUpperCase() + str.slice(1);
 });
 console.log(strings);
