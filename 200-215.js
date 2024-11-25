@@ -1,6 +1,12 @@
-function sumArray(arr) {
-    return arr.reduce((sum, num) => sum + num, 0);
+function getDivisors(num) {
+    const divisors = [];
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            divisors.push(i);
+        }
+    }
+    return divisors;
 }
 
-console.log(sumArray([1, 2, 3, 4]));
-console.log(sumArray([10, -5, 7]));
+console.log(getDivisors(12));
+console.log(getDivisors(7));
