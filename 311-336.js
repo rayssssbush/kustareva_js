@@ -1,3 +1,8 @@
 let today = new Date();
 let dayOfWeek = today.getDay();
-console.log(dayOfWeek);
+
+if (dayOfWeek === 0 || dayOfWeek === 6) {
+    console.log("Сегодня выходной день.");
+} else {
+    console.log("Сегодня рабочий день.");
+}
