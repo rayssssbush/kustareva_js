@@ -3,9 +3,8 @@ function sqrt(num) {
 }
 
 function round(num) {
-    return num.toFixed(3);
+    return parseFloat(num.toFixed(3));
 }
 
-// Вычисление
-const result = round(sqrt(2));
-console.log(result); // Вывод: 1.414
+const res = round(sqrt(2));
+console.log(res); 
