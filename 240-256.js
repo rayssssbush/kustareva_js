@@ -1,12 +1,16 @@
-function func() {
-    return function() {
-        return function() {
-            return function() {
+function func(a) {
+    let arr = [a];
+    return function(b) {
+        arr.push(b);
+        return function(c) {
+            arr.push(c);
+            return function(d) {
+                arr.push(d);
                 return function() {
-                    return '!';
+                    return arr;
                 };
             };
         };
     };
 }
-console.log(func()()()()());
+console.log(func(2)(3)(4)(5)());
