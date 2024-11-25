@@ -1,11 +1,5 @@
-function divideUntilLessThanTen(num) {
-    let iterations = 0;
-    while (num >= 10) {
-        num /= 2;
-        iterations++;
-    }
-    return iterations;
+function func(num1, num2) {
+    return (num1 > 0 && num2 > 0) ? num1 * num2 : num1 - num2;
 }
 
-const result = divideUntilLessThanTen(100);
-console.log(result);
+console.log(func(3, 4));
