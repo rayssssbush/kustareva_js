@@ -1,15 +1,7 @@
-function daysBetween() {
-    let startDate = new Date(new Date().getFullYear(), 0, 1);
-    let endDate = new Date(new Date().getFullYear(), 8, 10);
-    let diffTime = endDate - startDate;
-    return diffTime / (1000 * 3600 * 24);
+function hoursSinceYesterdayNoon() {
+    let now = new Date();
+    let yesterdayNoon = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 12, 0, 0);
+    let diffTime = now - yesterdayNoon;
+    return diffTime / (1000 * 3600);
 }
-console.log(daysBetween()); 
-function daysBetweenCurrentAndNextMonth() {
-    let today = new Date();
-    let startDate = new Date(today.getFullYear(), today.getMonth(), 20);
-    let endDate = new Date(today.getFullYear(), today.getMonth() + 1, 10);
-    let diffTime = endDate - startDate;
-    return diffTime / (1000 * 3600 * 24);
-}
-console.log(daysBetweenCurrentAndNextMonth()); 
+console.log(hoursSinceYesterdayNoon());
