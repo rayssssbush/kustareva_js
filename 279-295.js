@@ -1,7 +1,5 @@
-const arr = [1, -2, 3, 12, 7, 0, 9, 11];
-const filteredArr = arr.filter(item => item > 0 && item < 10);
+const arr = [1, 2, 3, 4, 5];
 
-console.log(filteredArr);
-const filteredArr2 = arr.filter((item, index) => item * (index + 1) < 30);
+const allPositive = arr.every(item => item > 0);
 
-console.log(filteredArr2);
+console.log(allPositive);
