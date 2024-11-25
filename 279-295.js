@@ -1,7 +1,7 @@
-function average(...numbers) {
-    const sum = numbers.reduce((acc, num) => acc + num, 0);
-    return sum / numbers.length;
-  }
-
-  console.log(average(1, 2, 3, 4, 5));
-  
+let arr = ['John', 'Smit', 'development', 'programmer', 2000];
+let [name, surname, department, position, salary] = arr;
+console.log(name);
+console.log(surname);
+console.log(department);
+console.log(position);
+console.log(salary);
