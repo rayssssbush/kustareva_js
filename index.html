@@ -7,21 +7,73 @@
 </head>
 <body>
 
-    <p id="para1">Текст абзаца</p>
-    <button id="button1">Прочитать HTML</button>
+    <input id="elem" type="email">
+    <button id="button1">Вывести атрибут type</button>
 
-    <p id="para2">Текст абзаца</p>
-    <button id="button2">Записать жирный текст</button>
+    <input id="elem2" type="email">
+    <button id="button2">Изменить атрибут type</button>
+
+    <a id="link" href="https://example.com">Перейти на сайт</a>
+    <button id="button3">Вывести атрибут href</button>
+    <p id="para1"></p>
+
+    <a id="link2" href="https://example.com">Перейти на сайт</a>
+    <button id="button4">Добавить href в текст</button>
+
+    <img id="image" src="image1.jpg" alt="image1">
+    <button id="button5">Вывести путь к картинке</button>
+    <p id="para2"></p>
+
+    <img id="image2" src="image1.jpg" width="200" alt="image2">
+    <button id="button6">Изменить ширину</button>
+
+    <button id="button7">Увеличить ширину в 2 раза</button>
+
+    <img id="image3" src="image1.jpg" alt="image3">
+    <button id="button8">Заменить картинку 1</button>
+    <button id="button9">Заменить картинку 2</button>
 
     <script>
         document.getElementById('button1').addEventListener('click', function() {
-            console.log(document.getElementById('para1').outerHTML);
+            console.log(document.getElementById('elem').getAttribute('type'));
         });
 
         document.getElementById('button2').addEventListener('click', function() {
-            document.getElementById('para2').innerHTML = '<b>Новый жирный текст</b>';
+            document.getElementById('elem2').setAttribute('type', 'submit');
+        });
+
+        document.getElementById('button3').addEventListener('click', function() {
+            document.getElementById('para1').innerText = document.getElementById('link').getAttribute('href');
+        });
+
+        document.getElementById('button4').addEventListener('click', function() {
+            let link = document.getElementById('link2');
+            link.innerText += ` (${link.getAttribute('href')})`;
+        });
+
+        document.getElementById('button5').addEventListener('click', function() {
+            document.getElementById('para2').innerText = document.getElementById('image').getAttribute('src');
+        });
+
+        document.getElementById('button6').addEventListener('click', function() {
+            document.getElementById('image2').setAttribute('width', '300');
+        });
+
+        document.getElementById('button7').addEventListener('click', function() {
+            let img = document.getElementById('image2');
+            let currentWidth = img.width;
+            img.setAttribute('width', currentWidth * 2);
+        });
+
+        document.getElementById('button8').addEventListener('click', function() {
+            document.getElementById('image3').setAttribute('src', 'image1.jpg');
+        });
+
+        document.getElementById('button9').addEventListener('click', function() {
+            document.getElementById('image3').setAttribute('src', 'image2.jpg');
         });
     </script>
 
 </body>
 </html>
+
