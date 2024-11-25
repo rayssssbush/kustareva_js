@@ -7,20 +7,27 @@
 </head>
 <body>
 
-    <input id="input1" type="text">
-    <button id="button1">1</button>
+    <p id="para1">Текст 1</p>
+    <p id="para2">Текст 2</p>
+    <p id="para3">Текст 3</p>
+    <p id="para4">Текст 4</p>
+    <p id="para5">Текст 5</p>
+
+    <input id="input1" type="number" value="2">
+    <input id="input2" type="number" value="3">
+    <input id="input3" type="number" value="4">
 
     <script>
-        document.getElementById('input1').addEventListener('focus', function() {
-            this.value = 1;
+        document.querySelectorAll('p').forEach(function(para) {
+            para.addEventListener('click', function() {
+                this.innerText += '!';
+            });
         });
 
-        document.getElementById('input1').addEventListener('blur', function() {
-            this.value = 2;
-        });
-
-        document.getElementById('button1').addEventListener('click', function() {
-            this.innerText = parseInt(this.innerText) + 1;
+        document.querySelectorAll('input').forEach(function(input) {
+            input.addEventListener('blur', function() {
+                this.value = Math.pow(this.value, 2);
+            });
         });
     </script>
 
