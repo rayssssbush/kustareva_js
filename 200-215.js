@@ -1,7 +1,11 @@
 function sqrt(num) {
     return Math.sqrt(num);
 }
-let root3 = sqrt(3);
-let root4 = sqrt(4);
-let sum = root3 + root4;
-console.log(sum);
+
+function round(num) {
+    return num.toFixed(3);
+}
+
+// Вычисление
+const result = round(sqrt(2));
+console.log(result); // Вывод: 1.414
