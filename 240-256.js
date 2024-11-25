@@ -1,7 +1,7 @@
 function test(func) {
-    console.log(func(3)); // Вызов переданной функции с аргументом 3
+    console.log(func(3));
 }
-
-test(function(num) {
+const func = function(num) {
     return num ** 3;
-});
+};
+test(func);
