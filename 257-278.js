@@ -1,3 +1,3 @@
-const arr = ['hello', 'world', 'javascript'];
-const result = arr.map(item => item.split('').reverse().join(''));
+const arr = [1, 2, 3, 4, 5];
+const result = arr.map((item, index) => item * (index + 1));
 console.log(result);
