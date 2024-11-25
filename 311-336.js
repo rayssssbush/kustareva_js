@@ -1,11 +1,5 @@
-function getLastDayOfMonth(month, year) {
-    let date = new Date(year, month, 0);
-    return date.getDate();
+function isLeap(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
   }
-  
-  console.log(getLastDayOfMonth(5, 2025));
-  
-  let lastDayOfMay2025 = new Date(2025, 4, getLastDayOfMonth(5, 2025));
-  let dayOfWeek = lastDayOfMay2025.getDay();
-  console.log(dayOfWeek);
-  
+  console.log(isLeap(2024));
+  console.log(isLeap(2023));  
