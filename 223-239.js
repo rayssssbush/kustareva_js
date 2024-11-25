@@ -1,9 +1,11 @@
-const func1 = function() {
-    return 1;
-};
-const func2 = function() {
-    return 2;
-};
-const sum = func1() + func2();
+const arr = [
+    function() { return 1; },
+    function() { return 2; },
+    function() { return 3; }
+];
+console.log(arr[2]());
+const sum = arr[0]() + arr[1]() + arr[2]();
 console.log(sum);
-alert(sum);
+for (let func of arr) {
+    console.log(func());
+}
