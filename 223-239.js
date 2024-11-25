@@ -1,7 +1,5 @@
-function func() {
-    return "Hello, World!";
+function func1() {
+    return 3;
 }
-console.log(func());
-console.log(func.toString());
-func = 123;
-console.log(func);
+const func2 = func1;
+console.log(func1() + func2());
