@@ -1,15 +1,10 @@
-function counter() {
-    let count = 0;
-    return function() {
-        count = count === 5 ? 1 : count + 1;
-        console.log(count);
-    };
+function sumOfSquares(arr) {
+    if (arr.length === 0) {
+        return 0;
+    } else {
+        return arr[0] ** 2 + sumOfSquares(arr.slice(1));
+    }
 }
-const countCalls = counter();
-countCalls();
-countCalls();
-countCalls();
-countCalls();
-countCalls();
-countCalls();
-countCalls();
+
+let arr = [1, 2, 3, 4, 5];
+console.log(sumOfSquares(arr));
