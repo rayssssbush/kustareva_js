@@ -3,33 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обработчики событий</title>
+    <title>Анонимная функция-обработчик</title>
 </head>
 <body>
 
-    <input type="number" id="input1" value="5">
-    <input type="number" id="input2" value="10">
-    <input type="number" id="input3" value="15">
-
-    <p>5</p>
-    <p>10</p>
-    <p>15</p>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
 
     <script>
-        function func() {
-            this.value = Number(this.value) + 1;
-        }
+        let divs = document.querySelectorAll('div');
 
-        document.querySelectorAll('input').forEach(function(input) {
-            input.addEventListener('blur', func);
-        });
-
-        document.querySelectorAll('p').forEach(function(para) {
-            para.addEventListener('click', function() {
-                let num = Number(this.innerText);
-                this.innerText = num * num;
+        for (let div of divs) {
+            div.addEventListener('click', function() {
+                this.textContent++;
             });
-        });
+        }
     </script>
 
 </body>
