@@ -1,5 +1,6 @@
-function stringToArray(str) {
-    return str.split('');
+function secondsToDays(seconds) {
+    return Math.floor(seconds / 86400);
 }
-console.log(stringToArray("hello"));
-console.log(stringToArray("12345"));
+
+console.log(secondsToDays(86400));
+console.log(secondsToDays(172800));
