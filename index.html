@@ -7,73 +7,64 @@
 </head>
 <body>
 
-    <input id="elem" type="email">
-    <button id="button1">Вывести атрибут type</button>
+    <input id="input1" type="text">
+    <button id="button1">Записать текст</button>
 
-    <input id="elem2" type="email">
-    <button id="button2">Изменить атрибут type</button>
-
-    <a id="link" href="https://example.com">Перейти на сайт</a>
-    <button id="button3">Вывести атрибут href</button>
+    <input id="input2" type="text">
     <p id="para1"></p>
+    <button id="button2">Записать в абзац</button>
 
-    <a id="link2" href="https://example.com">Перейти на сайт</a>
-    <button id="button4">Добавить href в текст</button>
+    <input id="input3" type="number">
+    <input id="input4" type="number">
+    <button id="button3">Посчитать квадрат</button>
 
-    <img id="image" src="image1.jpg" alt="image1">
-    <button id="button5">Вывести путь к картинке</button>
+    <input id="input5" type="text">
+    <input id="input6" type="text">
+    <button id="button4">Поменять местами</button>
+
+    <input id="input7" type="number">
+    <input id="input8" type="number">
+    <input id="input9" type="number">
+    <input id="input10" type="number">
+    <input id="input11" type="number">
     <p id="para2"></p>
-
-    <img id="image2" src="image1.jpg" width="200" alt="image2">
-    <button id="button6">Изменить ширину</button>
-
-    <button id="button7">Увеличить ширину в 2 раза</button>
-
-    <img id="image3" src="image1.jpg" alt="image3">
-    <button id="button8">Заменить картинку 1</button>
-    <button id="button9">Заменить картинку 2</button>
+    <button id="button5">Среднее арифметическое</button>
 
     <script>
         document.getElementById('button1').addEventListener('click', function() {
-            console.log(document.getElementById('elem').getAttribute('type'));
+            document.getElementById('input1').value = 'Пример текста';
         });
 
         document.getElementById('button2').addEventListener('click', function() {
-            document.getElementById('elem2').setAttribute('type', 'submit');
+            document.getElementById('para1').innerText = document.getElementById('input2').value;
         });
 
         document.getElementById('button3').addEventListener('click', function() {
-            document.getElementById('para1').innerText = document.getElementById('link').getAttribute('href');
+            let num = parseFloat(document.getElementById('input3').value);
+            document.getElementById('input4').value = num * num;
         });
 
         document.getElementById('button4').addEventListener('click', function() {
-            let link = document.getElementById('link2');
-            link.innerText += ` (${link.getAttribute('href')})`;
+            let input1Value = document.getElementById('input5').value;
+            let input2Value = document.getElementById('input6').value;
+            document.getElementById('input5').value = input2Value;
+            document.getElementById('input6').value = input1Value;
         });
 
         document.getElementById('button5').addEventListener('click', function() {
-            document.getElementById('para2').innerText = document.getElementById('image').getAttribute('src');
-        });
-
-        document.getElementById('button6').addEventListener('click', function() {
-            document.getElementById('image2').setAttribute('width', '300');
-        });
-
-        document.getElementById('button7').addEventListener('click', function() {
-            let img = document.getElementById('image2');
-            let currentWidth = img.width;
-            img.setAttribute('width', currentWidth * 2);
-        });
-
-        document.getElementById('button8').addEventListener('click', function() {
-            document.getElementById('image3').setAttribute('src', 'image1.jpg');
-        });
-
-        document.getElementById('button9').addEventListener('click', function() {
-            document.getElementById('image3').setAttribute('src', 'image2.jpg');
+            let sum = 0;
+            let count = 0;
+            for (let i = 7; i <= 11; i++) {
+                let value = parseFloat(document.getElementById('input' + i).value);
+                if (!isNaN(value)) {
+                    sum += value;
+                    count++;
+                }
+            }
+            let average = sum / count;
+            document.getElementById('para2').innerText = `Среднее арифметическое: ${average}`;
         });
     </script>
 
 </body>
 </html>
-
