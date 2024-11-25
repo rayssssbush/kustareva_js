@@ -1,16 +1,10 @@
-function func(a) {
-    let arr = [a];
-    return function(b) {
-        arr.push(b);
-        return function(c) {
-            arr.push(c);
-            return function(d) {
-                arr.push(d);
-                return function() {
-                    return arr;
-                };
-            };
-        };
-    };
+function each(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = func(arr[i], i, arr);
+    }
 }
-console.log(func(2)(3)(4)(5)());
+let numbers = [1, 2, 3, 4, 5];
+each(numbers, function(num) {
+    return num * 2;
+});
+console.log(numbers);
