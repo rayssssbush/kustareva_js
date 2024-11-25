@@ -1,10 +1,11 @@
-function sumOfSquares(arr) {
-    if (arr.length === 0) {
-        return 0;
-    } else {
-        return arr[0] ** 2 + sumOfSquares(arr.slice(1));
+function printPrimitives(obj) {
+    for (let key in obj) {
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+            printPrimitives(obj[key]);
+        } else {
+            console.log(obj[key]);
+        }
     }
 }
-
-let arr = [1, 2, 3, 4, 5];
-console.log(sumOfSquares(arr));
+const obj = {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}; 
+printPrimitives(obj);
