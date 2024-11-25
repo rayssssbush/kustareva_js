@@ -1,12 +1,5 @@
-function getDivisors(num) {
-    const divisors = [];
-    for (let i = 1; i <= num; i++) {
-        if (num % i === 0) {
-            divisors.push(i);
-        }
-    }
-    return divisors;
+function stringToArray(str) {
+    return str.split('');
 }
-
-console.log(getDivisors(12));
-console.log(getDivisors(7));
+console.log(stringToArray("hello"));
+console.log(stringToArray("12345"));
