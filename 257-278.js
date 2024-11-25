@@ -1,18 +1,7 @@
-function countdown() {
-    let number = 10;
+(function() {
     return function() {
-        if (number > 0) {
-            number--;
-            console.log(number);
-        } else {
-            console.log("Отсчет окончен");
-        }
+        return function() {
+            alert('!');
+        };
     };
-}
-const countdownFrom10 = countdown();
-countdownFrom10();
-countdownFrom10();
-countdownFrom10();
-countdownFrom10();
-countdownFrom10();
-countdownFrom10();
+})()()();
