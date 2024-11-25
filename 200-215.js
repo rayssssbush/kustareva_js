@@ -1,10 +1,6 @@
-function hasConsecutiveDuplicates(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i] === arr[i + 1]) {
-            return true;
-        }
-    }
-    return false;
+function sumArray(arr) {
+    return arr.reduce((sum, num) => sum + num, 0);
 }
-console.log(hasConsecutiveDuplicates([1, 2, 2, 3]));
-console.log(hasConsecutiveDuplicates([1, 2, 3, 4]));
+
+console.log(sumArray([1, 2, 3, 4]));
+console.log(sumArray([10, -5, 7]));
