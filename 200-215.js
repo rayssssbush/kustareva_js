@@ -1,9 +1,10 @@
-function areAllDigitsOdd(number) {
-    return number
-        .toString()
-        .split('')
-        .every(digit => parseInt(digit) % 2 !== 0);
+function hasConsecutiveDuplicates(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] === arr[i + 1]) {
+            return true;
+        }
+    }
+    return false;
 }
-
-console.log(areAllDigitsOdd(13579));
-console.log(areAllDigitsOdd(13578));
+console.log(hasConsecutiveDuplicates([1, 2, 2, 3]));
+console.log(hasConsecutiveDuplicates([1, 2, 3, 4]));
