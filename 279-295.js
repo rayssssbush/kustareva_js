@@ -1,5 +1,6 @@
-const arr = [1, 4, 9, 16, 25];
-const result = arr.map(Math.sqrt);
-console.log(result);
-const result2 = arr.map((item, index) => item * (index + 1));
-console.log(result2);
+const arr = [1, 2, 3, 4, 5];
+let sum = 0;
+arr.forEach(item => {
+  sum += item ** 2;
+});
+console.log(sum); 
