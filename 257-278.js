@@ -1,13 +1,14 @@
-function sumObjectValues(obj) {
-    let sum = 0;
-    for (let key in obj) {
-        if (typeof obj[key] === 'object' && obj[key] !== null) {
-            sum += sumObjectValues(obj[key]);
+function flattenArrayToString(arr) {
+    let result = '';
+    arr.forEach(item => {
+        if (Array.isArray(item)) {
+            result += flattenArrayToString(item);
         } else {
-            sum += obj[key];
-    }
-    return sum;
-}}
+            result += item;
+        }
+    });
+    return result;
+}
 
-const obj = {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}; 
-console.log(sumObjectValues(obj));
+const arr = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]];
+console.log(flattenArrayToString(arr));
