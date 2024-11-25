@@ -1,6 +1,9 @@
-function secondsToDays(seconds) {
-    return Math.floor(seconds / 86400);
+function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
 }
-
-console.log(secondsToDays(86400));
-console.log(secondsToDays(172800));
+console.log(isPrime(7));
+console.log(isPrime(10));
