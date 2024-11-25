@@ -1,7 +1,7 @@
-function hoursSinceYesterdayNoon() {
+function hoursSinceStartOfDay() {
     let now = new Date();
-    let yesterdayNoon = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 12, 0, 0);
-    let diffTime = now - yesterdayNoon;
-    return diffTime / (1000 * 3600);
+    let startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return (now - startOfDay) / (1000 * 3600);
 }
-console.log(hoursSinceYesterdayNoon());
+
+console.log(hoursSinceStartOfDay());
