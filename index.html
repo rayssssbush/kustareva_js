@@ -7,62 +7,27 @@
 </head>
 <body>
 
-    <input id="input1" type="text">
-    <button id="button1">Записать текст</button>
+    <div id="elem" class="content no-gap"></div>
+    <button id="button1">Прочитать атрибут class</button>
 
-    <input id="input2" type="text">
-    <p id="para1"></p>
-    <button id="button2">Записать в абзац</button>
+    <div id="elem2"></div>
+    <button id="button2">Записать класс</button>
 
-    <input id="input3" type="number">
-    <input id="input4" type="number">
-    <button id="button3">Посчитать квадрат</button>
-
-    <input id="input5" type="text">
-    <input id="input6" type="text">
-    <button id="button4">Поменять местами</button>
-
-    <input id="input7" type="number">
-    <input id="input8" type="number">
-    <input id="input9" type="number">
-    <input id="input10" type="number">
-    <input id="input11" type="number">
-    <p id="para2"></p>
-    <button id="button5">Среднее арифметическое</button>
+    <div id="elem3" class="aaa bbb ccc"></div>
+    <button id="button3">Получить массив классов</button>
 
     <script>
         document.getElementById('button1').addEventListener('click', function() {
-            document.getElementById('input1').value = 'Пример текста';
+            console.log(document.getElementById('elem').getAttribute('class'));
         });
 
         document.getElementById('button2').addEventListener('click', function() {
-            document.getElementById('para1').innerText = document.getElementById('input2').value;
+            document.getElementById('elem2').setAttribute('class', 'new-class');
         });
 
         document.getElementById('button3').addEventListener('click', function() {
-            let num = parseFloat(document.getElementById('input3').value);
-            document.getElementById('input4').value = num * num;
-        });
-
-        document.getElementById('button4').addEventListener('click', function() {
-            let input1Value = document.getElementById('input5').value;
-            let input2Value = document.getElementById('input6').value;
-            document.getElementById('input5').value = input2Value;
-            document.getElementById('input6').value = input1Value;
-        });
-
-        document.getElementById('button5').addEventListener('click', function() {
-            let sum = 0;
-            let count = 0;
-            for (let i = 7; i <= 11; i++) {
-                let value = parseFloat(document.getElementById('input' + i).value);
-                if (!isNaN(value)) {
-                    sum += value;
-                    count++;
-                }
-            }
-            let average = sum / count;
-            document.getElementById('para2').innerText = `Среднее арифметическое: ${average}`;
+            let classes = document.getElementById('elem3').className.split(' ');
+            console.log(classes);
         });
     </script>
 
