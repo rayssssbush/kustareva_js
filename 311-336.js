@@ -1,7 +1,5 @@
-let months = [
-	'янв', 'фев', 'мар', 'апр', 'май', 'июн',
-	'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'
-];
-let today = new Date();
-let currentMonth = today.getMonth();
-console.log(months[currentMonth]);
+let birthDate = new Date(2005, 5, 10);
+let dayOfWeek = birthDate.getDay();
+let daysOfWeek = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+console.log(daysOfWeek[dayOfWeek]);
