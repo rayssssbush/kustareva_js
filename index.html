@@ -7,27 +7,54 @@
 </head>
 <body>
 
-    <button>Кнопка</button>
+    <p id="para1">Текст абзаца</p>
+    <button id="button1">Прочитать текст</button>
+
+    <p id="para2">Старый текст</p>
+    <button id="button2">Записать новый текст</button>
+
+    <p id="para3">5</p>
+    <p id="para4">10</p>
+    <button id="button3">Вывести сумму</button>
+
+    <p id="para5">2</p>
+    <p id="para6">3</p>
+    <p id="para7">4</p>
+    <div id="result"></div>
+    <button id="button4">Записать сумму в див</button>
+
+    <p id="para8">7</p>
+    <button id="button5">Прибавить 1</button>
+
+    <p id="para9">Hello</p>
+    <button id="button6">Добавить восклицательный знак</button>
 
     <script>
-        document.querySelector('button').addEventListener('dblclick', function() {
-            console.log('Двойной клик!');
+        document.getElementById('button1').addEventListener('click', function() {
+            console.log(document.getElementById('para1').innerText);
         });
 
-        document.querySelector('button').addEventListener('mouseenter', function() {
-            console.log('Наведено на кнопку!');
+        document.getElementById('button2').addEventListener('click', function() {
+            document.getElementById('para2').innerText = 'Новый текст';
         });
 
-        document.querySelector('button').addEventListener('mouseleave', function() {
-            console.log('Курсор покинул кнопку!');
+        document.getElementById('button3').addEventListener('click', function() {
+            let sum = parseInt(document.getElementById('para3').innerText) + parseInt(document.getElementById('para4').innerText);
+            console.log(sum);
         });
 
-        let button = document.querySelector('button');
-        button.addEventListener('mouseenter', function() {
-            console.log('Наведено на кнопку!');
+        document.getElementById('button4').addEventListener('click', function() {
+            let sum = parseInt(document.getElementById('para5').innerText) + parseInt(document.getElementById('para6').innerText) + parseInt(document.getElementById('para7').innerText);
+            document.getElementById('result').innerText = sum;
         });
-        button.addEventListener('mouseleave', function() {
-            console.log('Курсор покинул кнопку!');
+
+        document.getElementById('button5').addEventListener('click', function() {
+            let num = parseInt(document.getElementById('para8').innerText);
+            document.getElementById('para8').innerText = num + 1;
+        });
+
+        document.getElementById('button6').addEventListener('click', function() {
+            document.getElementById('para9').innerText += '!';
         });
     </script>
 
