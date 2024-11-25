@@ -1,3 +1,3 @@
-const arr = [1, 4, 9, 16, 25];
-const result = arr.map(Math.sqrt);
+const arr = ['apple', 'banana', 'cherry'];
+const result = arr.map(item => item + '!');
 console.log(result);
