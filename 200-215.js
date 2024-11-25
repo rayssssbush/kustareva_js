@@ -1,10 +1,11 @@
-function sqrt(num) {
-    return Math.sqrt(num);
+function divideUntilLessThanTen(num) {
+    let iterations = 0;
+    while (num >= 10) {
+        num /= 2;
+        iterations++;
+    }
+    return iterations;
 }
 
-function round(num) {
-    return parseFloat(num.toFixed(3));
-}
-
-const res = round(sqrt(2));
-console.log(res); 
+const result = divideUntilLessThanTen(100);
+console.log(result);
