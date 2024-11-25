@@ -1,7 +1,7 @@
 function test(func) {
-    console.log(func(3));
+    alert(func(2, 3));
 }
-const func = function(num) {
-    return num ** 3;
+const func = function(a, b) {
+    return a + b;
 };
 test(func);
