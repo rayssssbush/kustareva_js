@@ -1,3 +1,3 @@
-const arr = ['apple', 'banana', 'cherry'];
-const result = arr.map(item => item + '!');
+const arr = ['hello', 'world', 'javascript'];
+const result = arr.map(item => item.split('').reverse().join(''));
 console.log(result);
