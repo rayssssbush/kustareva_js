@@ -1,14 +1,12 @@
-function flattenArrayToString(arr) {
-    let result = '';
-    arr.forEach(item => {
+function squareArrayElements(arr) {
+    return arr.map(item => {
         if (Array.isArray(item)) {
-            result += flattenArrayToString(item);
+            return squareArrayElements(item);
         } else {
-            result += item;
+            return item * item;
         }
     });
-    return result;
 }
 
-const arr = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]];
-console.log(flattenArrayToString(arr));
+const arr = [1, [2, 7, 8], [3, 4], [5, [6, 7]]];
+console.log(squareArrayElements(arr));
