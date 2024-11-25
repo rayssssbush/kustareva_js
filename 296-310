@@ -1,8 +1,11 @@
-let arr = ['John', 'Smit', 'development', 'programmer'];
+let options = {
+	color: 'red',
+	width:  400,
+	height: 500,
+};
 
-let [name, surname, department, position = 'trainee'] = arr;
+let { color, width, height } = options;
 
-console.log(name);
-console.log(surname);
-console.log(department);
-console.log(position);
+console.log(color);
+console.log(width);
+console.log(height);
