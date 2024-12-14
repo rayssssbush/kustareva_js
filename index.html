@@ -1,11 +1,12 @@
 <div id="elem">
-    text
+    <p>text1</p>
     <span>tag</span>
+    <p>text2</p>
   </div>
-  
   <script>
     let elem = document.querySelector('#elem');
-    console.log(elem.lastChild);
-    console.log(elem.lastElementChild);
+    let firstParagraph = elem.querySelector('p');
+    console.log(firstParagraph.nextSibling);
+    console.log(firstParagraph.nextElementSibling);
   </script>
   
