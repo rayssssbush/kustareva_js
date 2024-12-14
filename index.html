@@ -1,6 +1,16 @@
-<div id="elem"></div>
+<ul>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+  </ul>
+  
+  <script>
+    const listItems = document.getElementsByTagName('li');
 
-<script>
-  const elem = document.getElementById('elem');
-  elem.textContent = 'Привет, мир!';
-</script>
+    for (let item of listItems) {
+      item.style.color = 'red';
+    }
+  </script>
+  
