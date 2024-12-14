@@ -1,18 +1,11 @@
-<div id="parent">
-    <p class="www">text</p>
-    <p class="www">text</p>
-    <p class="www">text</p>
-    <p class="ggg">text</p>
-    <p class="ggg">text</p>
-    <p class="ggg">text</p>
+<div id="elem">
+    text
+    <span>tag</span>
   </div>
   
   <script>
-    let parent = document.querySelector('#parent');
-    let elems1 = parent.querySelectorAll('.www');
-    let elems2 = parent.querySelectorAll('.ggg');
-
-    console.log(elems1);
-    console.log(elems2);
+    let elem = document.querySelector('#elem');
+    console.log(elem.lastChild);
+    console.log(elem.lastElementChild);
   </script>
   
