@@ -1,43 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Стилизация абзаца</title>
-  <style>
-    .strikethrough {
-      text-decoration: line-through;
-    }
-    .bold {
-      font-weight: bold;
-    }
-    .red {
-      color: red;
-    }
-  </style>
-</head>
-<body>
-  <p id="paragraph">Это тестовый абзац.</p>
-  <button id="strikeButton">Перечеркнуть</button>
-  <button id="boldButton">Сделать жирным</button>
-  <button id="redButton">Сделать красным</button>
-
+<ul id="elem">
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+  </ul>
+  
   <script>
-    const paragraph = document.getElementById('paragraph');
-    const strikeButton = document.getElementById('strikeButton');
-    const boldButton = document.getElementById('boldButton');
-    const redButton = document.getElementById('redButton');
-    strikeButton.addEventListener('click', () => {
-      paragraph.classList.toggle('strikethrough');
-    });
-
-    boldButton.addEventListener('click', () => {
-      paragraph.classList.toggle('bold');
-    });
-
-    redButton.addEventListener('click', () => {
-      paragraph.classList.toggle('red');
-    });
+    const elem = document.getElementById('elem');
+    const firstChild = elem.firstElementChild;
+    firstChild.style.color = 'red'; 
   </script>
-</body>
-</html>
+  
