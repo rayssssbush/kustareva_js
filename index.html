@@ -1,13 +1,16 @@
-<ul id="elem">
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-  </ul>
+<div>
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li id="elem">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+  </div>
+  
   <script>
     const elem = document.getElementById('elem');
-    const lastChild = elem.lastElementChild;
-    lastChild.style.color = 'red';
+    const parent = elem.parentElement;
+    parent.style.border = '2px solid red';
   </script>
   
