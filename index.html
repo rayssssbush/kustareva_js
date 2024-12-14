@@ -1,10 +1,18 @@
-<p class="www">elem 1</p>
-<p class="www">elem 2</p>
-<p class="www">elem 3</p>
+<div id="parent">
+    <p class="www">text</p>
+    <p class="www">text</p>
+    <p class="www">text</p>
+    <p class="ggg">text</p>
+    <p class="ggg">text</p>
+    <p class="ggg">text</p>
+  </div>
+  
+  <script>
+    let parent = document.querySelector('#parent');
+    let elems1 = parent.querySelectorAll('.www');
+    let elems2 = parent.querySelectorAll('.ggg');
 
-<script>
-  const elements = document.getElementsByClassName('www');
-  for (let element of elements) {
-    element.style.color = 'red';
-  }
-</script>
+    console.log(elems1);
+    console.log(elems2);
+  </script>
+  
