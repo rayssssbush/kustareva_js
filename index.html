@@ -1,16 +1,10 @@
-<ul>
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-  </ul>
-  
-  <script>
-    const listItems = document.getElementsByTagName('li');
+<p class="www">elem 1</p>
+<p class="www">elem 2</p>
+<p class="www">elem 3</p>
 
-    for (let item of listItems) {
-      item.style.color = 'red';
-    }
-  </script>
-  
+<script>
+  const elements = document.getElementsByClassName('www');
+  for (let element of elements) {
+    element.style.color = 'red';
+  }
+</script>
