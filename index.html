@@ -3,10 +3,11 @@
     <span>tag</span>
     <p>text2</p>
   </div>
+  
   <script>
     let elem = document.querySelector('#elem');
-    let firstParagraph = elem.querySelector('p');
-    console.log(firstParagraph.nextSibling);
-    console.log(firstParagraph.nextElementSibling);
+    let secondParagraph = elem.querySelectorAll('p')[1];
+    console.log(secondParagraph.previousSibling);
+    console.log(secondParagraph.previousElementSibling);
   </script>
   
