@@ -1,16 +1,14 @@
-<div>
-    <ul>
-      <li>text</li>
-      <li>text</li>
-      <li id="elem">text</li>
-      <li>text</li>
-      <li>text</li>
-    </ul>
-  </div>
+<header>
+    <div>
+      <p>
+        <span id="elem"></span>
+      </p>
+    </div>
+  </header>
   
   <script>
     const elem = document.getElementById('elem');
-    const parent = elem.parentElement;
-    parent.style.border = '2px solid red';
+    const parentDiv = elem.closest('div');
+    parentDiv.style.border = '2px solid red';
   </script>
   
