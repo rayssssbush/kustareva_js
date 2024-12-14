@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Изменение дива</title>
+  <title>Изменение стиля дива</title>
   <style>
-    /* Исходный стиль дива */
     #myDiv {
-      background-color: lightblue;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
-  <div id="myDiv">Привет! Я див.</div>
-  <button id="changeButton">Изменить див</button>
+  <div id="myDiv">Этот текст будет изменен.</div>
+  <button id="styleButton">Изменить стиль</button>
 
   <script>
-    // JavaScript для обработки клика
-    const div = document.getElementById('myDiv');
-    const button = document.getElementById('changeButton');
+    const div = document.querySelector('#myDiv');
+    const button = document.querySelector('#styleButton');
 
     button.addEventListener('click', () => {
-      // Добавление стилей
-      div.style.width = '200px';
-      div.style.height = '200px';
-      div.style.border = '2px solid black';
+      div.style.fontSize = '20px';
+      div.style.borderTop = '2px solid black';
+      div.style.backgroundColor = 'yellow';
     });
   </script>
 </body>
