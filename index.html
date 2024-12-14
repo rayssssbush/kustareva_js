@@ -1,26 +1,6 @@
-<ul>
-    <li>text</li>
-    <li>text</li>
-    <li id="elem">text</li>
-    <li>text</li>
-    <li>text</li>
-  </ul>
-  
-  <script>
-    const elem = document.getElementById('elem');
-    const previousSibling = elem.previousElementSibling;
-    if (previousSibling) {
-      previousSibling.textContent += '!';
-    }
-  
-    const nextSibling = elem.nextElementSibling;
-    if (nextSibling) {
-      nextSibling.textContent += '!';
-    }
-  
-    const nextSiblingOfNext = nextSibling ? nextSibling.nextElementSibling : null;
-    if (nextSiblingOfNext) {
-      nextSiblingOfNext.textContent += '!';
-    }
-  </script>
-  
+<div id="elem"></div>
+
+<script>
+  const elem = document.getElementById('elem');
+  elem.textContent = 'Привет, мир!';
+</script>
