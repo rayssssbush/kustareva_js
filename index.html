@@ -1,6 +1,6 @@
 <header>
-    <div>
-      <p>
+    <div class="www">
+      <p class="www">
         <span id="elem"></span>
       </p>
     </div>
@@ -8,7 +8,7 @@
   
   <script>
     const elem = document.getElementById('elem');
-    const parentDiv = elem.closest('div');
-    parentDiv.style.border = '2px solid red';
+    const parentClass = elem.closest('.www');
+    parentClass.style.border = '2px solid red';
   </script>
   
