@@ -1,8 +1,9 @@
 <div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
-
 <script>
   let elem = document.querySelector('#elem');
   for (let node of elem.childNodes) {
-    console.log(node.nodeName);
+    if (node.nodeType === 1 || node.nodeType === 3) {
+      console.log(node.nodeName);
+    }
   }
 </script>
