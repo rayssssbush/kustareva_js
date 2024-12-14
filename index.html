@@ -1,49 +1,31 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Списки</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Изменение дива</title>
+  <style>
+    /* Исходный стиль дива */
+    #myDiv {
+      background-color: lightblue;
+    }
+  </style>
 </head>
 <body>
+  <div id="myDiv">Привет! Я див.</div>
+  <button id="changeButton">Изменить див</button>
 
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-    </ul>
+  <script>
+    // JavaScript для обработки клика
+    const div = document.getElementById('myDiv');
+    const button = document.getElementById('changeButton');
 
-    <script>
-        // Задача 1
-        let listItems = document.querySelectorAll('ul li');
-        
-        listItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                this.textContent = Number(this.textContent) + 1;
-            });
-        });
-
-        // Задача 2
-        listItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                if (!this.dataset.clicked) {
-                    this.textContent = Number(this.textContent) + 1;
-                    this.dataset.clicked = true;
-                }
-            });
-        });
-
-        // Задача 3
-        listItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                if (Number(this.textContent) < 10) {
-                    this.textContent = Number(this.textContent) + 1;
-                }
-            });
-        });
-    </script>
-
+    button.addEventListener('click', () => {
+      // Добавление стилей
+      div.style.width = '200px';
+      div.style.height = '200px';
+      div.style.border = '2px solid black';
+    });
+  </script>
 </body>
 </html>
