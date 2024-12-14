@@ -1,14 +1,26 @@
-<header>
-    <div class="www">
-      <p class="www">
-        <span id="elem"></span>
-      </p>
-    </div>
-  </header>
+<ul>
+    <li>text</li>
+    <li>text</li>
+    <li id="elem">text</li>
+    <li>text</li>
+    <li>text</li>
+  </ul>
   
   <script>
     const elem = document.getElementById('elem');
-    const parentClass = elem.closest('.www');
-    parentClass.style.border = '2px solid red';
+    const previousSibling = elem.previousElementSibling;
+    if (previousSibling) {
+      previousSibling.textContent += '!';
+    }
+  
+    const nextSibling = elem.nextElementSibling;
+    if (nextSibling) {
+      nextSibling.textContent += '!';
+    }
+  
+    const nextSiblingOfNext = nextSibling ? nextSibling.nextElementSibling : null;
+    if (nextSiblingOfNext) {
+      nextSiblingOfNext.textContent += '!';
+    }
   </script>
   
