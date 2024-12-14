@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Изменение стиля списка</title>
+  <title>Стилизация абзаца</title>
   <style>
-    ul {
-      list-style: none;
-      padding: 0;
+    .strikethrough {
+      text-decoration: line-through;
     }
-    li {
-      background-color: lightblue;
-      margin: 5px;
-      padding: 10px;
+    .bold {
+      font-weight: bold;
+    }
+    .red {
+      color: red;
     }
   </style>
 </head>
 <body>
-  <ul id="myList">
-    <li>Элемент 1</li>
-    <li>Элемент 2</li>
-    <li>Элемент 3</li>
-  </ul>
-  <button id="floatButton">Применить float</button>
+  <p id="paragraph">Это тестовый абзац.</p>
+  <button id="strikeButton">Перечеркнуть</button>
+  <button id="boldButton">Сделать жирным</button>
+  <button id="redButton">Сделать красным</button>
 
   <script>
-    const button = document.querySelector('#floatButton');
-    const listItems = document.querySelectorAll('#myList li');
+    const paragraph = document.getElementById('paragraph');
+    const strikeButton = document.getElementById('strikeButton');
+    const boldButton = document.getElementById('boldButton');
+    const redButton = document.getElementById('redButton');
+    strikeButton.addEventListener('click', () => {
+      paragraph.classList.toggle('strikethrough');
+    });
 
-    button.addEventListener('click', () => {
-      listItems.forEach(item => {
-        item.style.cssFloat = 'left';
-      });
+    boldButton.addEventListener('click', () => {
+      paragraph.classList.toggle('bold');
+    });
+
+    redButton.addEventListener('click', () => {
+      paragraph.classList.toggle('red');
     });
   </script>
 </body>
