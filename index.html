@@ -3,25 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Изменение стиля дива</title>
+  <title>Изменение стиля списка</title>
   <style>
-    #myDiv {
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background-color: lightblue;
+      margin: 5px;
       padding: 10px;
     }
   </style>
 </head>
 <body>
-  <div id="myDiv">Этот текст будет изменен.</div>
-  <button id="styleButton">Изменить стиль</button>
+  <ul id="myList">
+    <li>Элемент 1</li>
+    <li>Элемент 2</li>
+    <li>Элемент 3</li>
+  </ul>
+  <button id="floatButton">Применить float</button>
 
   <script>
-    const div = document.querySelector('#myDiv');
-    const button = document.querySelector('#styleButton');
+    const button = document.querySelector('#floatButton');
+    const listItems = document.querySelectorAll('#myList li');
 
     button.addEventListener('click', () => {
-      div.style.fontSize = '20px';
-      div.style.borderTop = '2px solid black';
-      div.style.backgroundColor = 'yellow';
+      listItems.forEach(item => {
+        item.style.cssFloat = 'left';
+      });
     });
   </script>
 </body>
