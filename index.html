@@ -1,14 +1,11 @@
-<ol id="elem"></ol>
-<button id="button">click me</button>
+<ul id="parent"></ul>
 
 <script>
-document.getElementById('button').addEventListener('click', function() {
-  let li = document.createElement('li');
-  li.textContent = 'item';
-  document.getElementById('elem').appendChild(li);
+let parent = document.querySelector('#parent');
 
-  li.addEventListener('click', function() {
-    li.textContent += '!';
-  });
-});
+for (let i = 1; i <= 10; i++) {
+  let li = document.createElement('li');
+  li.textContent = i;
+  parent.appendChild(li);
+}
 </script>
