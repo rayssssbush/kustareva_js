@@ -1,24 +1,12 @@
-<ul id="parent">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
-  <input type="submit" id="button">
+<div id="parent">
+    <p id="elem">text</p>
+    <a href="#" id="remove">remove</a>
+  </div>
   <script>
-    let parent = document.querySelector('#parent');
-    let button = document.querySelector('#button');
-    button.addEventListener('click', () => {
-      let newLi = document.createElement('li');
-      newLi.textContent = parent.children.length + 1;
-      
-      newLi.addEventListener('click', function() {
-        this.remove();
-      });
-      parent.appendChild(newLi);
-    });
-    parent.addEventListener('click', function(event) {
-      if (event.target.tagName === 'LI') {
-        event.target.remove();
-      }
+    let elem = document.querySelector('#elem');
+    let remove = document.querySelector('#remove');
+    remove.addEventListener('click', function(event) {
+      elem.remove();
+      event.preventDefault();
     });
   </script>
