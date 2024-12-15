@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toggle Active List</title>
-    <style>
-        .active {
-            background: red;
-        }
-    </style>
+    <title>DOM Functions</title>
 </head>
 <body>
-<ul id="list">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-</ul>
+
+<p id="elem1">text1</p>
+<p id="elem2">text2</p>
+<p id="elem3">text3</p>
+
+<input type="text" id="input1">
+
 <script>
-    let items = document.querySelectorAll('#list li');
-    for (let item of items) {
-        item.addEventListener('click', function() {
-            this.classList.toggle('active');
-        });
-    }
+function appendText(elem, text) {
+    elem.textContent += text;
+}
+
+let elems = document.querySelectorAll('p');
+for (let elem of elems) {
+    appendText(elem, '!');
+}
+
+function setValue(input, text) {
+    input.value = text;
+}
+
+let inputElem = document.getElementById('input1');
+setValue(inputElem, 'Some text');
 </script>
+
 </body>
 </html>
