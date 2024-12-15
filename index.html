@@ -1,22 +1,17 @@
-<ul id="list">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-  </ul>
-  <button id="addItem">Add Item</button>
-  
-  <script>
-    let list = document.querySelector('#list');
-    list.addEventListener('click', function(event) {
-      if (event.target.tagName.toLowerCase() === 'li') {
-        event.target.textContent = event.target.textContent + '!';
-      }
-    });
-  
-    document.querySelector('#addItem').addEventListener('click', function() {
-      let newItem = document.createElement('li');
-      newItem.textContent = 'New Item';
-      list.appendChild(newItem);
-    });
-  </script>
-  
+<input type="text" id="elem" value="Hello">
+
+<script>
+"use strict";
+
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', parent);
+
+function parent() {
+	console.log(this.value);
+	
+	function child() {
+		console.log(this.value);
+	}
+	child();
+}
+</script>
