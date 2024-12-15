@@ -1,11 +1,17 @@
-<ul id="parent"></ul>
+<div id="parent"></div>
+<p id="output"></p>
 
 <script>
 let parent = document.querySelector('#parent');
+let output = document.querySelector('#output');
 
-for (let i = 1; i <= 10; i++) {
-  let li = document.createElement('li');
-  li.textContent = i;
-  parent.appendChild(li);
+for (let i = 1; i <= 5; i++) {
+  let input = document.createElement('input');
+  
+  input.addEventListener('blur', function() {
+    output.textContent = this.value;
+  });
+  
+  parent.appendChild(input);
 }
 </script>
