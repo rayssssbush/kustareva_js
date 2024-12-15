@@ -4,7 +4,10 @@ for (let elem of arr) {
 	let li = document.createElement('li');
 	li.textContent = elem;
 	li.addEventListener('click', function() {
-		li.textContent += '!';
+		if (!li.textContent.endsWith('!')) {
+			li.textContent += '!';  
+		}
 	});
+
 	ul.appendChild(li);
 }
