@@ -1,30 +1,37 @@
-<div id="parent" style="padding: 20px; border: 2px solid blue;">
-    Parent Element
-    <div id="child" style="padding: 20px; border: 2px solid green;">
-      Child Element
-      <button id="btn">Click Me</button>
-    </div>
+<div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
   </div>
   
+  <style>
+    div, ul, li {
+      padding: 20px;
+    }
+  
+    div {
+      border: 1px solid red;
+    }
+  
+    ul {
+      border: 1px solid orange;
+    }
+  
+    li {
+      border: 1px solid green;
+    }
+  </style>
+  
   <script>
-    document.getElementById('parent').addEventListener('click', function() {
-      console.log('Parent Clicked');
-    });
-  
-    document.getElementById('child').addEventListener('click', function() {
-      console.log('Child Clicked');
-    });
-  
-    document.getElementById('btn').addEventListener('click', function() {
-      console.log('Button Clicked');
-    });
-  
-    document.getElementById('btn').addEventListener('focus', function() {
-      console.log('Button Focused');
-    });
-    
-    document.getElementById('btn').addEventListener('blur', function() {
-      console.log('Button Blurred');
+    let div = document.querySelector('div');
+    div.addEventListener('click', function(event) {
+      if (event.target.tagName.toLowerCase() === 'li') {
+        event.target.textContent += '!';
+      } else if (event.target.tagName.toLowerCase() === 'ul') {
+        console.log('Клик по ul');
+      }
     });
   </script>
   
