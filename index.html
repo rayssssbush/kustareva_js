@@ -1,133 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Работа с выпадающим списком</title>
-</head>
-<body>
-  <h3>Задача 1: Вывести текст выбранного пункта</h3>
-  <select id="select1">
-    <option>Option 1</option>
-    <option>Option 2</option>
-    <option>Option 3</option>
+<select id="select">
+    <option value="1">Пункт 1</option>
+    <option value="2">Пункт 2</option>
+    <option value="3">Пункт 3</option>
   </select>
-  <button id="button1">Показать</button>
-  <p id="output1"></p>
-
-  <hr>
-
-  <h3>Задача 2: Проверить високосный год</h3>
-  <select id="yearsSelect">
-  </select>
-  <p id="output2"></p>
-
-  <hr>
-
-  <h3>Задача 3: Автоматический выбор текущего месяца</h3>
-  <select id="monthsSelect">
-  </select>
-  <p id="output3"></p>
-
-  <hr>
-
-  <h3>Задача 4: Переключение пункта списка через ввод</h3>
-  <input type="number" id="numberInput" placeholder="Введите номер пункта" min="1">
-  <select id="select2">
-    <option>Option 1</option>
-    <option>Option 2</option>
-    <option>Option 3</option>
-    <option>Option 4</option>
-    <option>Option 5</option>
-  </select>
-
-  <hr>
-
-  <h3>Задача 5: Выбор текущего дня недели</h3>
-  <select id="daysSelect">
-  </select>
-  <p id="output5"></p>
-
+  <button id="button">Добавить восклицательный знак</button>
+  
   <script>
-    let select1 = document.querySelector('#select1');
-    let button1 = document.querySelector('#button1');
-    let output1 = document.querySelector('#output1');
-
-    button1.addEventListener('click', function() {
-      output1.textContent = `Вы выбрали: ${select1.value}`;
+    let select = document.querySelector('#select');
+    let button = document.querySelector('#button');
+  
+    button.addEventListener('click', function() {
+      let selectedOption = select.options[select.selectedIndex];
+      selectedOption.textContent += '!';
     });
-
-    let yearsSelect = document.querySelector('#yearsSelect');
-    let output2 = document.querySelector('#output2');
-
-    for (let year = 2020; year <= 2030; year++) {
-      let option = document.createElement('option');
-      option.value = year;
-      option.textContent = year;
-      yearsSelect.appendChild(option);
-    }
-
-    yearsSelect.addEventListener('change', function() {
-      let year = parseInt(this.value);
-      let isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-      output2.textContent = `${year} год ${isLeap ? 'високосный' : 'не високосный'}.`;
-    });
-
-    let monthsSelect = document.querySelector('#monthsSelect');
-    let output3 = document.querySelector('#output3');
-
-    const months = [
-      'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-      'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
-    ];
-
-    months.forEach((month, index) => {
-      let option = document.createElement('option');
-      option.value = index;
-      option.textContent = month;
-      monthsSelect.appendChild(option);
-    });
-
-    let currentMonth = new Date().getMonth();
-    monthsSelect.value = currentMonth;
-
-    output3.textContent = `Текущий месяц: ${months[currentMonth]}`;
-
-    monthsSelect.addEventListener('change', function() {
-      let selectedMonth = this.value;
-      output3.textContent = `Вы выбрали: ${months[selectedMonth]}`;
-    });
-
-    let numberInput = document.querySelector('#numberInput');
-    let select2 = document.querySelector('#select2');
-
-    numberInput.addEventListener('blur', function() {
-      let index = parseInt(this.value) - 1;
-      if (index >= 0 && index < select2.options.length) {
-        select2.selectedIndex = index;
-      } else {
-        alert('Неверный номер пункта!');
-      }
-    });
-
-    let daysSelect = document.querySelector('#daysSelect');
-    let output5 = document.querySelector('#output5');
-
-    const days = [
-      'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'
-    ];
-
-    days.forEach((day, index) => {
-      let option = document.createElement('option');
-      option.value = index;
-      option.textContent = day;
-      daysSelect.appendChild(option);
-    });
-
-    let currentDay = new Date().getDay();
-    daysSelect.value = currentDay;
-
-    output5.textContent = `Сегодня: ${days[currentDay]}`;
   </script>
-</body>
-</html>
+  
