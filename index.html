@@ -22,15 +22,8 @@
   <p id="output2"></p>
 
   <hr>
-  <h3>Задача 3: Проверить рабочий или выходной день</h3>
-  <select id="daysSelect">
-    <option value="1">Понедельник</option>
-    <option value="2">Вторник</option>
-    <option value="3">Среда</option>
-    <option value="4">Четверг</option>
-    <option value="5">Пятница</option>
-    <option value="6">Суббота</option>
-    <option value="7">Воскресенье</option>
+  <h3>Задача 3: Автоматический выбор текущего месяца</h3>
+  <select id="monthsSelect">
   </select>
   <p id="output3"></p>
 
@@ -55,13 +48,24 @@
       let isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
       output2.textContent = `${year} год ${isLeap ? 'високосный' : 'не високосный'}.`;
     });
-    let daysSelect = document.querySelector('#daysSelect');
+    let monthsSelect = document.querySelector('#monthsSelect');
     let output3 = document.querySelector('#output3');
-
-    daysSelect.addEventListener('change', function() {
-      let dayValue = parseInt(this.value);
-      let isWeekend = dayValue === 6 || dayValue === 7;
-      output3.textContent = `Выбранный день ${isWeekend ? 'выходной' : 'рабочий'}.`;
+    const months = [
+      'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+      'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+    ];
+    months.forEach((month, index) => {
+      let option = document.createElement('option');
+      option.value = index;
+      option.textContent = month;
+      monthsSelect.appendChild(option);
+    });
+    let currentMonth = new Date().getMonth();
+    monthsSelect.value = currentMonth;
+    output3.textContent = `Текущий месяц: ${months[currentMonth]}`;
+    monthsSelect.addEventListener('change', function() {
+      let selectedMonth = this.value;
+      output3.textContent = `Вы выбрали: ${months[selectedMonth]}`;
     });
   </script>
 </body>
