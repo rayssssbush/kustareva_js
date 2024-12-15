@@ -1,10 +1,16 @@
-<input type="text" id="inputElem">
-<button id="cloneButton">Клонировать</button>
+<table id="table"></table>
+
 <script>
-let inputElem = document.querySelector('#inputElem');
-let cloneButton = document.querySelector('#cloneButton');
-cloneButton.addEventListener('click', function() {
-    let clonedInput = inputElem.cloneNode(true);
-    document.body.appendChild(clonedInput);
-});
+  const table = document.getElementById('table');
+  
+  for (let i = 0; i < 5; i++) {
+    const row = document.createElement('tr');
+    
+    for (let j = 0; j < 5; j++) {
+      const cell = document.createElement('td');
+      row.appendChild(cell);
+    }
+    
+    table.appendChild(row);
+  }
 </script>
