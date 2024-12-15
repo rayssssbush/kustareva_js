@@ -1,13 +1,23 @@
 <button id="startButton">Начать обратный отсчет</button>
+
 <script>
+let timerId = null;
+
 document.getElementById('startButton').addEventListener('click', function() {
+
+    if (timerId !== null) {
+        return;
+    }
+
     let number = 100;
 
-    let timerId = setInterval(() => {
+    timerId = setInterval(() => {
         console.log(number);
         number--;
+
         if (number < 0) {
             clearInterval(timerId);
+            timerId = null;
         }
     }, 1000);
 });
