@@ -1,23 +1,39 @@
 ;(function() {
-    function avg1(arr) {
-        return sum(arr, 1) / arr.length;
-    }
-
-    function avg2(arr) {
-        return sum(arr, 2) / arr.length;
-    }
-
-    function avg3(arr) {
-        return sum(arr, 3) / arr.length;
-    }
-    function sum(arr, pow) {
-        let res = 0;
-        
-        for (let elem of arr) {
-            res += elem ** pow;
+    function each(arr, func) {
+        for (let i = 0; i < arr.length; i++) {
+            func(arr[i], i, arr);
         }
-        
-        return res;
     }
-    window.math = { avg1, avg2, avg3 };
+    function map(arr, func) {
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            result.push(func(arr[i], i, arr));
+        }
+        return result;
+    }
+    function reduce(arr, func, initialValue) {
+        let accumulator = initialValue;
+        for (let i = 0; i < arr.length; i++) {
+            accumulator = func(accumulator, arr[i], i, arr);
+        }
+        return accumulator;
+    }
+    function filter(arr, func) {
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (func(arr[i], i, arr)) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+    function find(arr, func) {
+        for (let i = 0; i < arr.length; i++) {
+            if (func(arr[i], i, arr)) {
+                return arr[i];
+            }
+        }
+        return undefined;
+    }
+    window._ = { each, map, reduce, filter, find };
 })();
