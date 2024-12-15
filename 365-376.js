@@ -1,4 +1,8 @@
 let select = document.querySelector('#select');
 for (let option of select.options) {
-    option.textContent += ` (${option.value})`;
+    if (option.selected) {
+        option.textContent += '!';
+    } else {
+        option.textContent += '?';
+    }
 }
