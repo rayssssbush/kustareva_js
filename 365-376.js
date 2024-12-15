@@ -1,12 +1,17 @@
-let elems = document.querySelectorAll('p');
-for (let elem of elems) {
-  let removeLink = document.createElement('a');
-  removeLink.href = '#';
-  removeLink.textContent = ' [strike]';
-  elem.appendChild(removeLink);
-  removeLink.addEventListener('click', function(event) {
+let rows = document.querySelectorAll('table tr');
+for (let row of rows) {
+  let link = document.createElement('a');
+  link.href = '#';
+  link.textContent = ' [highlight]';
+  let cell = document.createElement('td');
+  cell.appendChild(link);
+  row.appendChild(cell);
+  link.addEventListener('click', function(event) {
     event.preventDefault();
-    elem.style.textDecoration = 'line-through';
-    removeLink.remove();
+    if (row.style.backgroundColor === 'green') {
+      row.style.backgroundColor = '';
+    } else {
+      row.style.backgroundColor = 'green';
+    }
   });
 }
