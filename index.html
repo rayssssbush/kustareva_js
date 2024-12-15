@@ -1,11 +1,13 @@
-<input id="countdown" type="number" placeholder="Enter number">
+<input id="number" type="number">
+<button id="start">Start</button>
 <p id="timer"></p>
 
 <script>
-let input = document.getElementById('countdown');
+let input = document.getElementById('number');
+let button = document.getElementById('start');
 let timerParagraph = document.getElementById('timer');
 
-input.addEventListener('blur', function() {
+button.addEventListener('click', function() {
     let countdownValue = Number(input.value);
     let intervalId = setInterval(function() {
         timerParagraph.textContent = countdownValue--;
