@@ -1,49 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Координаты курсора</title>
-  <style>
-    #coordinates {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      padding: 5px;
-      font-family: Arial, sans-serif;
-    }
-  </style>
-</head>
-<body>
-
-<div id="coordinates">X: 0, Y: 0</div>
-
-<script>
-  let coordinates = document.getElementById('coordinates');
-
-  document.addEventListener('mousemove', function(event) {
-    let x = event.clientX;
-    let y = event.clientY;
-    coordinates.textContent = `X: ${x}, Y: ${y}`;
-  });
-</script>
-
-</body>
-</html>
-<button id="elem">text</button>
-
-<script>
-  let elem = document.querySelector('#elem');
-  elem.addEventListener('click', func);
-  elem.addEventListener('dblclick', func);
-
-  function func(event) {
-    if (event.type === 'click') {
-      elem.style.backgroundColor = 'green';
-    } else if (event.type === 'dblclick') {
-      elem.style.backgroundColor = 'red';
-    }
-  }
-</script>
+<ul id="elem">
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+  </ul>
+  
+  <script>
+    let ul = document.querySelector('#elem');
+  
+    ul.addEventListener('click', function(event) {
+      if (event.target.tagName.toLowerCase() === 'li') {
+        event.target.textContent += '!';
+      } else if (event.target.tagName.toLowerCase() === 'ul') {
+        console.log('Клик по тегу <ul>');
+      }
+    });
+  </script>
+  
