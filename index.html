@@ -1,34 +1,20 @@
-<div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+<input type="radio" name="choice" value="Option 1"> Option 1<br>
+<input type="radio" name="choice" value="Option 2"> Option 2<br>
+<input type="radio" name="choice" value="Option 3"> Option 3<br>
+
+<button id="button">Показать выбранное</button>
+<p id="output"></p>
 
 <script>
-  let elem = document.querySelector('#elem');
-
-  // №1: Перебираем все узлы и выводим тексты всех узлов
-  console.log('Тексты всех узлов:');
-  for (let node of elem.childNodes) {
-    console.log(node.textContent);
-  }
-
-  // №2: Перебираем все узлы и выводим тексты только комментариев и текстовых узлов
-  console.log('\nТексты комментариев и текстовых узлов:');
-  for (let node of elem.childNodes) {
-    if (node.nodeType === 3 || node.nodeType === 8) { 
-      console.log(node.textContent);
+  let radios = document.querySelectorAll('input[type="radio"]');
+  let button = document.querySelector('#button');
+  let output = document.querySelector('#output');
+  button.addEventListener('click', function() {
+    for (let radio of radios) {
+      if (radio.checked) {
+        output.textContent = radio.value;
+        break;
+      }
     }
-  }
-
-  // №3: Перебираем все узлы и выводим тексты только текстовых узлов и элементов
-  console.log('\nТексты текстовых узлов и элементов:');
-  for (let node of elem.childNodes) {
-    if (node.nodeType === 1 || node.nodeType === 3) { 
-      console.log(node.textContent);
-    }
-  }
-
-  // №4: Перебираем все узлы и каждому узлу в конец записываем его тип
-  console.log('\nТексты узлов с их типами:');
-  for (let node of elem.childNodes) {
-    node.textContent += ` (type: ${node.nodeType})`;
-    console.log(node.textContent);
-  }
+  });
 </script>
