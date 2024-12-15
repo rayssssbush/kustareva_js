@@ -7,12 +7,14 @@
     [7, 8, 9],
     [10, 11, 12]
   ];
+
   const table = document.getElementById('table');
+
   arr.forEach(row => {
     const tr = document.createElement('tr');
     row.forEach(cell => {
       const td = document.createElement('td');
-      td.textContent = cell * cell;
+      td.textContent = cell;
       tr.appendChild(td);
     });
     table.appendChild(tr);
