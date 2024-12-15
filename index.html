@@ -3,43 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Работа с change</title>
+  <title>Работа с input</title>
   <style>
-    .green-border {
-      border: 2px solid green;
-    }
-
-    .red-border {
-      border: 2px solid red;
+    .highlight {
+      color: red;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <input id="input1" value="Введите текст">
+  <input id="input1" placeholder="Введите текст">
   <p id="output1"></p>
-  <input type="checkbox" id="checkbox">
+  <input id="input2" placeholder="Введите до 5 символов">
   <p id="output2"></p>
-  <input id="input2" value="Проверка длины">
 
   <script>
     let input1 = document.querySelector('#input1');
     let output1 = document.querySelector('#output1');
-    input1.addEventListener('change', function() {
-      output1.textContent = this.value;
-    });
-    let checkbox = document.querySelector('#checkbox');
-    let output2 = document.querySelector('#output2');
-    checkbox.addEventListener('change', function() {
-      output2.textContent = this.checked ? 'Чекбокс отмечен' : 'Чекбокс снят';
+    input1.addEventListener('input', function() {
+      if (this.value.length === 5) {
+        output1.textContent = 'Длина текста достигла 5 символов!';
+      } else {
+        output1.textContent = '';
+      }
     });
     let input2 = document.querySelector('#input2');
-    input2.addEventListener('change', function() {
-      if (this.value.length < 5) {
-        this.classList.add('green-border');
-        this.classList.remove('red-border');
+    let output2 = document.querySelector('#output2');
+    const maxLength = 5; 
+    input2.addEventListener('input', function() {
+      let length = this.value.length;
+      if (length <= maxLength) {
+        output2.textContent = `Осталось символов: ${maxLength - length}`;
+        output2.classList.remove('highlight');
       } else {
-        this.classList.add('red-border');
-        this.classList.remove('green-border');
+        output2.textContent = `Превышено на ${length - maxLength} символов`;
+        output2.classList.add('highlight');
       }
     });
   </script>
