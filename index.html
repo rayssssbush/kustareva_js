@@ -18,6 +18,10 @@
 
     const ageCell = document.createElement('td');
     ageCell.textContent = employee.age;
+    ageCell.addEventListener('click', () => {
+      employee.age += 1;
+      ageCell.textContent = employee.age;
+    });
     tr.appendChild(ageCell);
 
     const salaryCell = document.createElement('td');
