@@ -1,10 +1,10 @@
-<p id="clock"></p>
+<ol id="elem"></ol>
+<button id="button">click me</button>
 
 <script>
-let clockParagraph = document.getElementById('clock');
-
-setInterval(function() {
-    let date = new Date();
-    clockParagraph.textContent = date.toLocaleTimeString();
-}, 1000);
+document.getElementById('button').addEventListener('click', function() {
+  let li = document.createElement('li');
+  li.textContent = 'item';
+  document.getElementById('elem').appendChild(li);
+});
 </script>
