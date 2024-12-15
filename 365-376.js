@@ -1,10 +1,14 @@
-const arr = ['Элемент 1', 'Элемент 2', 'Элемент 3'];
-const ul = document.getElementById('elem');
-arr.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    ul.appendChild(li);
-    li.addEventListener('click', () => {
-        li.textContent += '!';
-    });
-});
+let elems = document.querySelectorAll('li');
+for (let elem of elems) {
+  elem.addEventListener('click', function func() {
+    let input = document.createElement('input');
+    input.value = elem.textContent;
+    elem.textContent = '';
+    elem.appendChild(input);
+    input.addEventListener('blur', function() {
+      elem.textContent = this.value;
+      elem.addEventListener('click', func);
+    }); 
+    elem.removeEventListener('click', func);
+  });
+}
