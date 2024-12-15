@@ -1,13 +1,8 @@
-<button id="start">Start</button>
-<p id="number">0</p>
-
+<input id="number" type="number" value="2">
 <script>
-let button = document.getElementById('start');
-let paragraph = document.getElementById('number');
+let input = document.getElementById('number');
 
-button.addEventListener('click', function() {
-    setInterval(function() {
-        paragraph.textContent = Number(paragraph.textContent) + 1;
-    }, 1000);
-});
+setInterval(function() {
+    input.value = Math.pow(Number(input.value), 2);
+}, 1000);
 </script>
