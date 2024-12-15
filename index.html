@@ -1,19 +1,20 @@
-<input id="number" type="number">
-<button id="start">Start</button>
-<p id="timer"></p>
+\<button id="start">Start</button>
+<button id="stop">Stop</button>
+<p id="timer">0</p>
 
 <script>
-let input = document.getElementById('number');
-let button = document.getElementById('start');
+let startButton = document.getElementById('start');
+let stopButton = document.getElementById('stop');
 let timerParagraph = document.getElementById('timer');
+let intervalId;
 
-button.addEventListener('click', function() {
-    let countdownValue = Number(input.value);
-    let intervalId = setInterval(function() {
-        timerParagraph.textContent = countdownValue--;
-        if (countdownValue < 0) {
-            clearInterval(intervalId);
-        }
+startButton.addEventListener('click', function() {
+    intervalId = setInterval(function() {
+        timerParagraph.textContent = Number(timerParagraph.textContent) + 1;
     }, 1000);
+});
+
+stopButton.addEventListener('click', function() {
+    clearInterval(intervalId);
 });
 </script>
