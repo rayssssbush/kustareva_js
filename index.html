@@ -1,16 +1,20 @@
+<input type="number" id="rows" placeholder="Число рядов" />
+<input type="number" id="cols" placeholder="Число колонок" />
+<button onclick="generateTable()">Создать таблицу</button>
 <table id="table"></table>
-
 <script>
-  const table = document.getElementById('table');
-  
-  for (let i = 0; i < 5; i++) {
-    const row = document.createElement('tr');
-    
-    for (let j = 0; j < 5; j++) {
-      const cell = document.createElement('td');
-      row.appendChild(cell);
+  function generateTable() {
+    const table = document.getElementById('table');
+    const rows = document.getElementById('rows').value;
+    const cols = document.getElementById('cols').value;
+    table.innerHTML = '';
+    for (let i = 0; i < rows; i++) {
+      const row = document.createElement('tr');
+      for (let j = 0; j < cols; j++) {
+        const cell = document.createElement('td');
+        row.appendChild(cell);
+      }
+      table.appendChild(row);
     }
-    
-    table.appendChild(row);
   }
 </script>
