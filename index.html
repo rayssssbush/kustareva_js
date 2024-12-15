@@ -1,21 +1,30 @@
-<a href="https://example.com" id="link">Click me</a>
-
-<input type="number" id="input1">
-<input type="number" id="input2">
-<p id="output"></p>
-<a href="#" id="sumLink">Get Sum</a>
-
-<script>
-  let link = document.querySelector('#link');
-  link.addEventListener('click', function(event) {
-    event.preventDefault();
-    link.textContent += ' ' + link.href;
-  });
-
-  let sumLink = document.querySelector('#sumLink');
-  sumLink.addEventListener('click', function(event) {
-    let num1 = parseFloat(document.querySelector('#input1').value);
-    let num2 = parseFloat(document.querySelector('#input2').value);
-    document.querySelector('#output').textContent = num1 + num2;
-  });
-</script>
+<div id="parent" style="padding: 20px; border: 2px solid blue;">
+    Parent Element
+    <div id="child" style="padding: 20px; border: 2px solid green;">
+      Child Element
+      <button id="btn">Click Me</button>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('parent').addEventListener('click', function() {
+      console.log('Parent Clicked');
+    });
+  
+    document.getElementById('child').addEventListener('click', function() {
+      console.log('Child Clicked');
+    });
+  
+    document.getElementById('btn').addEventListener('click', function() {
+      console.log('Button Clicked');
+    });
+  
+    document.getElementById('btn').addEventListener('focus', function() {
+      console.log('Button Focused');
+    });
+    
+    document.getElementById('btn').addEventListener('blur', function() {
+      console.log('Button Blurred');
+    });
+  </script>
+  
