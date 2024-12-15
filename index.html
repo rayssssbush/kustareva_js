@@ -1,17 +1,19 @@
-<div id="parent"></div>
-<p id="output"></p>
+<ul id="parent">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+
+<input type="submit" id="button">
 
 <script>
+let button = document.querySelector('#button');
 let parent = document.querySelector('#parent');
-let output = document.querySelector('#output');
 
-for (let i = 1; i <= 5; i++) {
-  let input = document.createElement('input');
-  
-  input.addEventListener('blur', function() {
-    output.textContent = this.value;
-  });
-  
-  parent.appendChild(input);
-}
+button.addEventListener('click', function() {
+  let lastChild = parent.lastElementChild;
+  if (lastChild) {
+    parent.removeChild(lastChild);
+  }
+});
 </script>
