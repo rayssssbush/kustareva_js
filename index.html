@@ -1,8 +1,14 @@
 <input id="elem" value="hello">
+
 <script>
-let elem = document.querySelector('#elem');
-function func(surname, name) {
-	console.log(this.value + ', ' + surname + ' ' + name);
+let elem = document.getElementById('elem');
+
+function func(name, surname) {
+	console.log(this.value + ', ' + name + ' ' + surname);
 }
-func.apply(elem, ['Smit', 'John']);
+
+let boundFunc = func.bind(elem);
+
+boundFunc('John', 'Smit');
+boundFunc('Eric', 'Luis');
 </script>
