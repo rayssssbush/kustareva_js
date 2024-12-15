@@ -1,13 +1,8 @@
-let ul = document.querySelector('#elem');
-let arr = ['item 1', 'item 2', 'item 3', 'item 4'];
-for (let elem of arr) {
-	let li = document.createElement('li');
-	li.textContent = elem;
-	li.addEventListener('click', function() {
-		if (!li.textContent.endsWith('!')) {
-			li.textContent += '!';  
-		}
-	});
+const arr = ['Элемент 1', 'Элемент 2', 'Элемент 3'];
+const ul = document.getElementById('elem');
 
-	ul.appendChild(li);
-}
+arr.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+});
