@@ -5,4 +5,8 @@ arr.forEach(item => {
     const li = document.createElement('li');
     li.textContent = item;
     ul.appendChild(li);
+
+    li.addEventListener('click', () => {
+        alert(item);
+    });
 });
