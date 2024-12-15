@@ -1,24 +1,26 @@
-<button id="startButton">Начать обратный отсчет</button>
-
+<input type="submit" id="start" value="start">
+<input type="submit" id="stop" value="stop">
 <script>
-let timerId = null;
+let start = document.querySelector('#start');
+let stop = document.querySelector('#stop');
+let timerId;
 
-document.getElementById('startButton').addEventListener('click', function() {
-
-    if (timerId !== null) {
-        return;
-    }
-
-    let number = 100;
-
-    timerId = setInterval(() => {
-        console.log(number);
-        number--;
-
-        if (number < 0) {
-            clearInterval(timerId);
-            timerId = null;
-        }
+start.addEventListener('click', function() {
+    timerId = setInterval(function() {
+        let date = new Date();
+        console.log(date.getMinutes() + ' ' + date.getSeconds());
     }, 1000);
+    start.removeEventListener('click', arguments.callee);
+});
+
+stop.addEventListener('click', function() {
+    clearInterval(timerId);
+    start.addEventListener('click', function() {
+        timerId = setInterval(function() {
+            let date = new Date();
+            console.log(date.getMinutes() + ' ' + date.getSeconds());
+        }, 1000);
+        start.removeEventListener('click', arguments.callee);
+    });
 });
 </script>
