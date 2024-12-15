@@ -8,11 +8,9 @@
       <td>Row 2, Column 2</td>
     </tr>
   </table>
-  
   <script>
     let rows = document.querySelectorAll('#table tr');
-  
-    for (let row of rows) {
+    rows.forEach(row => {
       let removeCell = document.createElement('td');
       let removeLink = document.createElement('a');
       removeLink.href = '';
@@ -24,6 +22,5 @@
         row.remove();
         event.preventDefault();
       });
-    }
+    });
   </script>
-  
