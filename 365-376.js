@@ -1,6 +1,7 @@
-function setAttr(selector, attr, value) {
-    let elem = document.querySelector(selector);
-    elem.setAttribute(attr, value);
+function appendText(selector, text) {
+    let elems = document.querySelectorAll(selector);
+    for (let elem of elems) {
+        elem.textContent += text;
+    }
 }
-setAttr('#elem1', 'class', 'newClass');
-setAttr('#elem2', 'title', 'New Title');
+appendText('.elem', ' added text');
