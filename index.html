@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Functions</title>
+    <title>Create Table</title>
+    <style>
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-<ul id="list"></ul>
-<p class="elem"></p>
-<p class="elem"></p>
-<p class="elem"></p>
-<p class="elem"></p>
-<p class="elem"></p>
+<div id="elem1"></div>
+<div id="elem2"></div>
 <script>
-function setText(elems, text) {
-    for (let elem of elems) {
-        elem.textContent = text;
+function createTable(rows, cols, parent) {
+    let table = document.createElement('table');
+
+    for (let i = 0; i < rows; i++) {
+        let tr = document.createElement('tr');
+        for (let j = 0; j < cols; j++) {
+            let td = document.createElement('td');
+            td.textContent = `${i + 1},${j + 1}`;
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
     }
+    parent.appendChild(table);
 }
-let elems = document.querySelectorAll('.elem');
-setText(elems, 'text');
-function appendText(elems, text) {
-    for (let elem of elems) {
-        elem.textContent += text;
-    }
-}
-appendText(elems, '!');
-function appendElem(ul, text) {
-    let li = document.createElement('li');
-    li.textContent = text;
-    ul.appendChild(li);
-}
-let ul = document.getElementById('list');
-let arr = ['Item 1', 'Item 2', 'Item 3'];
-for (let item of arr) {
-    appendElem(ul, item);
-}
+let div1 = document.querySelector('#elem1');
+createTable(3, 4, div1);
+let div2 = document.querySelector('#elem2');
+createTable(5, 6, div2);
 </script>
 </body>
 </html>
