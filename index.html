@@ -1,26 +1,19 @@
-<table id="table">
-    <tr>
-      <td>Row 1, Column 1</td>
-      <td>Row 1, Column 2</td>
-    </tr>
-    <tr>
-      <td>Row 2, Column 1</td>
-      <td>Row 2, Column 2</td>
-    </tr>
-  </table>
+<div id="parent">
+    <p id="elem">text</p>
+  </div>
   <script>
-    let rows = document.querySelectorAll('#table tr');
-    rows.forEach(row => {
-      let removeCell = document.createElement('td');
-      let removeLink = document.createElement('a');
-      removeLink.href = '';
-      removeLink.textContent = 'remove';
-      removeCell.appendChild(removeLink);
-      row.appendChild(removeCell);
-  
-      removeLink.addEventListener('click', function(event) {
-        row.remove();
-        event.preventDefault();
-      });
+    let elem = document.querySelector('#elem');
+    elem.addEventListener('click', function() {
+      if (!elem.nextElementSibling || elem.nextElementSibling.tagName !== 'INPUT') {
+        let input = document.createElement('input');
+        input.value = elem.textContent;
+        input.addEventListener('blur', function() {
+          elem.textContent = this.value;
+          this.remove();
+        });
+        elem.parentElement.appendChild(input);
+        input.focus();
+      }
     });
   </script>
+  
