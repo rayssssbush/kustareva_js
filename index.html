@@ -1,14 +1,14 @@
-<input id="elem" value="hello">
-
+<button id="startButton">Начать обратный отсчет</button>
 <script>
-let elem = document.getElementById('elem');
+document.getElementById('startButton').addEventListener('click', function() {
+    let number = 100;
 
-function func(name, surname) {
-	console.log(this.value + ', ' + name + ' ' + surname);
-}
-
-let boundFunc = func.bind(elem);
-
-boundFunc('John', 'Smit');
-boundFunc('Eric', 'Luis');
+    let timerId = setInterval(() => {
+        console.log(number);
+        number--;
+        if (number < 0) {
+            clearInterval(timerId);
+        }
+    }, 1000);
+});
 </script>
