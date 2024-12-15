@@ -1,24 +1,22 @@
-<div id="parent">
-    <button>click me</button>
-    <div id="block">text</div>
-  </div>
-  
-  <style>
-    #block:not(.active) {
-      display: none;
-    }
-  </style>
+<ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <button id="addItem">Add Item</button>
   
   <script>
-    let parent = document.querySelector('#parent');
-    let button = document.querySelector('button');
-    let block  = document.querySelector('#block');
-    button.addEventListener('click', function(event) {
-      block.classList.add('active');
+    let list = document.querySelector('#list');
+    list.addEventListener('click', function(event) {
+      if (event.target.tagName.toLowerCase() === 'li') {
+        event.target.textContent = event.target.textContent + '!';
+      }
     });
-
-    parent.addEventListener('click', function() {
-      block.classList.remove('active');
+  
+    document.querySelector('#addItem').addEventListener('click', function() {
+      let newItem = document.createElement('li');
+      newItem.textContent = 'New Item';
+      list.appendChild(newItem);
     });
   </script>
   
