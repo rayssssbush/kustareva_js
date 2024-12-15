@@ -11,7 +11,11 @@
     function func3() {
         alert('функция модуля');
     }
-    window.str1 = str1; 
-    window.func1 = func1; 
-    window.func2 = func2;  
+    function func4() {
+        alert('функция модуля');
+    }
+    function func5() {
+        alert('функция модуля');
+    }
+    window.module = { str1, str2, func1, func2, func3, func4, func5 };
 })();
