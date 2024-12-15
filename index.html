@@ -1,20 +1,16 @@
-<ul id="elem">
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-    <li>text</li>
-  </ul>
-  
-  <script>
-    let ul = document.querySelector('#elem');
-  
-    ul.addEventListener('click', function(event) {
-      if (event.target.tagName.toLowerCase() === 'li') {
-        event.target.textContent += '!';
-      } else if (event.target.tagName.toLowerCase() === 'ul') {
-        console.log('Клик по тегу <ul>');
-      }
-    });
-  </script>
-  
+<input type="text" id="input">
+<p id="output"></p>
+
+<script>
+  let input = document.querySelector('#input');
+  let output = document.querySelector('#output');
+
+  input.addEventListener('keydown', function(event) {
+    console.log('Key: ' + event.key + ', Code: ' + event.keyCode);
+    
+    if (event.key === 'Enter') {
+      output.textContent = input.value;
+      input.value = '';
+    }
+  });
+</script>
