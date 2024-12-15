@@ -6,5 +6,9 @@ document.getElementById('button').addEventListener('click', function() {
   let li = document.createElement('li');
   li.textContent = 'item';
   document.getElementById('elem').appendChild(li);
+
+  li.addEventListener('click', function() {
+    li.textContent += '!';
+  });
 });
 </script>
