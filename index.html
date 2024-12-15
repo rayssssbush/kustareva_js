@@ -1,17 +1,8 @@
-<input id="elem1" value="text1">
-<input id="elem2" value="text2">
-<input id="elem3" value="text3">
-
+<input id="elem" value="hello">
 <script>
-function func() {
-	console.log(this.value);
+let elem = document.querySelector('#elem');
+function func(surname, name) {
+	console.log(this.value + ', ' + name + ' ' + surname);
 }
-
-let elem1 = document.querySelector('#elem1');
-let elem2 = document.querySelector('#elem2');
-let elem3 = document.querySelector('#elem3');
-
-func.call(elem1);
-func.call(elem2);
-func.call(elem3);
+func.call(elem, 'Smit', 'John');
 </script>
