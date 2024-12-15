@@ -8,10 +8,6 @@ for (let row of rows) {
   row.appendChild(cell);
   link.addEventListener('click', function(event) {
     event.preventDefault();
-    if (row.style.backgroundColor === 'green') {
-      row.style.backgroundColor = '';
-    } else {
-      row.style.backgroundColor = 'green';
-    }
+    row.style.backgroundColor = 'green';
   });
 }
