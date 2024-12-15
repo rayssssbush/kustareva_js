@@ -1,20 +1,10 @@
-\<button id="start">Start</button>
-<button id="stop">Stop</button>
-<p id="timer">0</p>
+<p id="clock"></p>
 
 <script>
-let startButton = document.getElementById('start');
-let stopButton = document.getElementById('stop');
-let timerParagraph = document.getElementById('timer');
-let intervalId;
+let clockParagraph = document.getElementById('clock');
 
-startButton.addEventListener('click', function() {
-    intervalId = setInterval(function() {
-        timerParagraph.textContent = Number(timerParagraph.textContent) + 1;
-    }, 1000);
-});
-
-stopButton.addEventListener('click', function() {
-    clearInterval(intervalId);
-});
+setInterval(function() {
+    let date = new Date();
+    clockParagraph.textContent = date.toLocaleTimeString();
+}, 1000);
 </script>
