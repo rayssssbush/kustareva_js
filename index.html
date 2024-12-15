@@ -3,24 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focus и Blur</title>
+  <title>Работа с выпадающим списком</title>
 </head>
 <body>
-  <input id="input1" maxlength="2" placeholder="Вводите сюда">
-  <input id="input2" maxlength="2" placeholder="Потом сюда">
+  <h3>Задача 1: Вывести текст выбранного пункта</h3>
+  <select id="select1">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+  <button id="button1">Показать</button>
+  <p id="output1"></p>
+
+  <hr>
+  <h3>Задача 2: Проверить високосный год</h3>
+  <select id="yearsSelect">
+  </select>
+  <p id="output2"></p>
 
   <script>
-    let input1 = document.querySelector('#input1');
-    let input2 = document.querySelector('#input2');
-    input1.addEventListener('input', function() {
-      if (this.value.length === 2) {
-        input2.focus();
-      }
+    let select1 = document.querySelector('#select1');
+    let button1 = document.querySelector('#button1');
+    let output1 = document.querySelector('#output1');
+
+    button1.addEventListener('click', function() {
+      output1.textContent = `Вы выбрали: ${select1.value}`;
     });
-    input2.addEventListener('input', function() {
-      if (this.value.length === 2) {
-        input2.blur();
-      }
+    let yearsSelect = document.querySelector('#yearsSelect');
+    let output2 = document.querySelector('#output2');
+
+    for (let year = 2020; year <= 2030; year++) {
+      let option = document.createElement('option');
+      option.value = year;
+      option.textContent = year;
+      yearsSelect.appendChild(option);
+    }
+    yearsSelect.addEventListener('change', function() {
+      let year = parseInt(this.value);
+      let isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+      output2.textContent = `${year} год ${isLeap ? 'високосный' : 'не високосный'}.`;
     });
   </script>
 </body>
