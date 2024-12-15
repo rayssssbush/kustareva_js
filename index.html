@@ -1,8 +1,17 @@
-<input id="number" type="number" value="2">
-<script>
-let input = document.getElementById('number');
+<input id="countdown" type="number" placeholder="Enter number">
+<p id="timer"></p>
 
-setInterval(function() {
-    input.value = Math.pow(Number(input.value), 2);
-}, 1000);
+<script>
+let input = document.getElementById('countdown');
+let timerParagraph = document.getElementById('timer');
+
+input.addEventListener('blur', function() {
+    let countdownValue = Number(input.value);
+    let intervalId = setInterval(function() {
+        timerParagraph.textContent = countdownValue--;
+        if (countdownValue < 0) {
+            clearInterval(intervalId);
+        }
+    }, 1000);
+});
 </script>
