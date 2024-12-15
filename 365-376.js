@@ -1,9 +1,17 @@
-function forEach(selector, func) {
-    let elems = document.querySelectorAll(selector);
-    for (let i = 0; i < elems.length; i++) {
-        func(elems[i], i);
+;(function() {
+    let str1 = 'переменная модуля';
+    let str2 = 'переменная модуля';
+    let str3 = 'переменная модуля';
+    function func1() {
+        alert('функция модуля');
     }
-}
-forEach('p', function(elem, index) {
-    elem.textContent = (index + 1) + '. ' + elem.textContent;
-});
+    function func2() {
+        alert('функция модуля');
+    }
+    function func3() {
+        alert('функция модуля');
+    }
+    window.str1 = str1; 
+    window.func1 = func1; 
+    window.func2 = func2;  
+})();
