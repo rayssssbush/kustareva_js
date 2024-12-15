@@ -1,40 +1,27 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Table</title>
-    <style>
-        td {
-            width: 50px;
-            height: 50px;
-            border: 1px solid black;
-        }
-    </style>
+    <title>Sum of Inputs</title>
 </head>
 <body>
-<div id="elem">
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-</div>
+<input type="number" id="input1">
+<input type="number" id="input2">
+<input type="number" id="input3">
+<button id="btn">Calculate Sum</button>
 <script>
-function createTable(rows, cols) {
-    let table = document.createElement('table'); 
-    for (let i = 0; i < rows; i++) {
-        let tr = document.createElement('tr');
-        for (let j = 0; j < cols; j++) {
-            let td = document.createElement('td');
-            td.textContent = `${i + 1},${j + 1}`;
-            tr.appendChild(td);
-        }
-        table.appendChild(tr);
+;(function(selector1, selector2, selector3, selector4) {
+    let input1 = document.querySelector(selector1);
+    let input2 = document.querySelector(selector2);
+    let input3 = document.querySelector(selector3);
+    let btn = document.querySelector(selector4);
+    function calculateSum() {
+        let sum = Number(input1.value) + Number(input2.value) + Number(input3.value);
+        console.log(sum);
     }
-    return table;
-}
-let div = document.querySelector('#elem');
-div.appendChild(createTable(3, 4));
+    btn.addEventListener('click', calculateSum);
+})('#input1', '#input2', '#input3', '#btn');
 </script>
 </body>
 </html>
