@@ -1,17 +1,15 @@
-<input type="text" id="elem" value="Hello">
-
+<input id="elem" value="3">
 <script>
 "use strict";
 
 let elem = document.querySelector('#elem');
-elem.addEventListener('blur', parent);
+elem.addEventListener('blur', func);
 
-function parent() {
-	console.log(this.value);
+function func() {
+	alert( square() );
 	
-	function child() {
-		console.log(this.value);
-	}
-	child();
+	const square = () => {
+		return this.value * this.value;
+	};
 }
 </script>
