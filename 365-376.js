@@ -1,14 +1,12 @@
-let parent = document.querySelector('#parent');
-
-let arr = [1, 2, 3, 4, 5];
+let ul = document.querySelector('#elem');
+let arr = ['item 1', 'item 2', 'item 3', 'item 4'];
 
 for (let elem of arr) {
-	let p = document.createElement('p');
-	p.textContent = elem;
-
-	p.addEventListener('click', function() {
-		p.textContent = parseInt(p.textContent) + 1;
+	let li = document.createElement('li');
+	li.textContent = elem;
+	li.addEventListener('click', function() {
+		alert(li.textContent);
 	});
-	
-	parent.appendChild(p);
+
+	ul.appendChild(li);
 }
