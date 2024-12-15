@@ -1,4 +1,8 @@
+let number = 100;
 let timerId = setInterval(() => {
-    console.log("Это сообщение выводится каждые 3 секунды");
-}, 3000);
-clearInterval(timerId);
+    number--;
+    console.log(number);
+    if (number <= 0) {
+        clearInterval(timerId);
+    }
+}, 1000);
