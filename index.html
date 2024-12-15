@@ -1,19 +1,17 @@
 <ul id="parent">
-	<li>1</li>
-	<li>2</li>
-	<li>3</li>
+	<li>text</li>
+	<li>text</li>
+	<li id="elem">text</li>
+	<li>text</li>
+	<li>text</li>
 </ul>
-
-<input type="submit" id="button">
-
 <script>
-let button = document.querySelector('#button');
 let parent = document.querySelector('#parent');
-
-button.addEventListener('click', function() {
-  let lastChild = parent.lastElementChild;
-  if (lastChild) {
-    parent.removeChild(lastChild);
-  }
+let elem = document.querySelector('#elem');
+let newItem = document.createElement('li');
+newItem.textContent = 'new';
+parent.insertBefore(newItem, elem);
+newItem.addEventListener('click', function() {
+    newItem.textContent += '!';
 });
 </script>
