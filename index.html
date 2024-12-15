@@ -1,19 +1,10 @@
-<div id="elem" style="border: 1px solid red;">
-	<p>text</p>
-	<p>text</p>
-	<p>text</p>
-</div>
+<input type="text" id="inputElem">
+<button id="cloneButton">Клонировать</button>
 <script>
-let elem = document.querySelector('#elem');
-let newDiv = document.createElement('div');
-newDiv.classList.add('www');
-let p1 = document.createElement('p');
-p1.textContent = 'text';
-let p2 = document.createElement('p');
-p2.textContent = 'text';
-let input = document.createElement('input');
-newDiv.appendChild(p1);
-newDiv.appendChild(p2);
-newDiv.appendChild(input);
-elem.parentNode.insertBefore(newDiv, elem);
+let inputElem = document.querySelector('#inputElem');
+let cloneButton = document.querySelector('#cloneButton');
+cloneButton.addEventListener('click', function() {
+    let clonedInput = inputElem.cloneNode(true);
+    document.body.appendChild(clonedInput);
+});
 </script>
