@@ -1,18 +1,24 @@
-<div id="parent">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Element Visibility</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
     <p id="elem">text</p>
-  </div>
-  <script>
-    let elem = document.querySelector('#elem');
-    elem.addEventListener('click', function func() {
-      let input = document.createElement('input');
-      input.value = elem.textContent;
-      elem.textContent = '';
-      elem.appendChild(input);
-      input.addEventListener('blur', function() {
-        elem.textContent = this.value;
-        elem.addEventListener('click', func);
-      });
-      elem.removeEventListener('click', func);
-    });
-  </script>
-  
+    <input type="submit" id="toggle" value="toggle">
+    <script>
+        let elem = document.querySelector('#elem');
+        let toggle = document.querySelector('#toggle');
+        toggle.addEventListener('click', function() {
+            elem.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
