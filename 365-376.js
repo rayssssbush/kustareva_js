@@ -1,21 +1,23 @@
 ;(function() {
-    let str1 = 'переменная модуля';
-    let str2 = 'переменная модуля';
-    let str3 = 'переменная модуля';
-    function func1() {
-        alert('функция модуля');
+    function avg1(arr) {
+        return sum(arr, 1) / arr.length;
     }
-    function func2() {
-        alert('функция модуля');
+
+    function avg2(arr) {
+        return sum(arr, 2) / arr.length;
     }
-    function func3() {
-        alert('функция модуля');
+
+    function avg3(arr) {
+        return sum(arr, 3) / arr.length;
     }
-    function func4() {
-        alert('функция модуля');
+    function sum(arr, pow) {
+        let res = 0;
+        
+        for (let elem of arr) {
+            res += elem ** pow;
+        }
+        
+        return res;
     }
-    function func5() {
-        alert('функция модуля');
-    }
-    window.module = { str1, str2, func1, func2, func3, func4, func5 };
+    window.math = { avg1, avg2, avg3 };
 })();
