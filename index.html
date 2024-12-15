@@ -1,15 +1,17 @@
-<input id="elem" value="3">
+<input id="elem1" value="text1">
+<input id="elem2" value="text2">
+<input id="elem3" value="text3">
+
 <script>
-"use strict";
-
-let elem = document.querySelector('#elem');
-elem.addEventListener('blur', func);
-
 function func() {
-	alert( square() );
-	
-	const square = () => {
-		return this.value * this.value;
-	};
+	console.log(this.value);
 }
+
+let elem1 = document.querySelector('#elem1');
+let elem2 = document.querySelector('#elem2');
+let elem3 = document.querySelector('#elem3');
+
+func.call(elem1);
+func.call(elem2);
+func.call(elem3);
 </script>
