@@ -1,26 +1,10 @@
-<input type="submit" id="start" value="start">
-<input type="submit" id="stop" value="stop">
+<input type="button" id="elem" value="1">
 <script>
-let start = document.querySelector('#start');
-let stop = document.querySelector('#stop');
-let timerId;
+let elem = document.querySelector('#elem');
 
-start.addEventListener('click', function() {
-    timerId = setInterval(function() {
-        let date = new Date();
-        console.log(date.getMinutes() + ' ' + date.getSeconds());
+elem.addEventListener('click', function() {
+    setInterval(() => {
+        elem.value = Number(elem.value) + 1;
     }, 1000);
-    start.removeEventListener('click', arguments.callee);
-});
-
-stop.addEventListener('click', function() {
-    clearInterval(timerId);
-    start.addEventListener('click', function() {
-        timerId = setInterval(function() {
-            let date = new Date();
-            console.log(date.getMinutes() + ' ' + date.getSeconds());
-        }, 1000);
-        start.removeEventListener('click', arguments.callee);
-    });
 });
 </script>
