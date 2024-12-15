@@ -7,5 +7,6 @@ for (let elem of elems) {
   removeLink.addEventListener('click', function(event) {
     event.preventDefault();
     elem.style.textDecoration = 'line-through';
+    removeLink.remove();
   });
 }
