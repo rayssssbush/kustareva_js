@@ -6,30 +6,36 @@
     <title>DOM Functions</title>
 </head>
 <body>
-
-<p id="elem1">text1</p>
-<p id="elem2">text2</p>
-<p id="elem3">text3</p>
-
-<input type="text" id="input1">
-
+<ul id="list"></ul>
+<p class="elem"></p>
+<p class="elem"></p>
+<p class="elem"></p>
+<p class="elem"></p>
+<p class="elem"></p>
 <script>
-function appendText(elem, text) {
-    elem.textContent += text;
+function setText(elems, text) {
+    for (let elem of elems) {
+        elem.textContent = text;
+    }
 }
-
-let elems = document.querySelectorAll('p');
-for (let elem of elems) {
-    appendText(elem, '!');
+let elems = document.querySelectorAll('.elem');
+setText(elems, 'text');
+function appendText(elems, text) {
+    for (let elem of elems) {
+        elem.textContent += text;
+    }
 }
-
-function setValue(input, text) {
-    input.value = text;
+appendText(elems, '!');
+function appendElem(ul, text) {
+    let li = document.createElement('li');
+    li.textContent = text;
+    ul.appendChild(li);
 }
-
-let inputElem = document.getElementById('input1');
-setValue(inputElem, 'Some text');
+let ul = document.getElementById('list');
+let arr = ['Item 1', 'Item 2', 'Item 3'];
+for (let item of arr) {
+    appendElem(ul, item);
+}
 </script>
-
 </body>
 </html>
