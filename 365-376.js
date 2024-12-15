@@ -1,7 +1,9 @@
-function appendText(selector, text) {
+function forEach(selector, func) {
     let elems = document.querySelectorAll(selector);
     for (let elem of elems) {
-        elem.textContent += text;
+        func(elem);
     }
 }
-appendText('.elem', ' added text');
+forEach('p', function(elem) {
+    elem.textContent += '!';
+});
