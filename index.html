@@ -1,10 +1,13 @@
-<input type="button" id="elem" value="1">
-<script>
-let elem = document.querySelector('#elem');
+<button id="start">Start</button>
+<p id="number">0</p>
 
-elem.addEventListener('click', function() {
-    setInterval(() => {
-        elem.value = Number(elem.value) + 1;
+<script>
+let button = document.getElementById('start');
+let paragraph = document.getElementById('number');
+
+button.addEventListener('click', function() {
+    setInterval(function() {
+        paragraph.textContent = Number(paragraph.textContent) + 1;
     }, 1000);
 });
 </script>
